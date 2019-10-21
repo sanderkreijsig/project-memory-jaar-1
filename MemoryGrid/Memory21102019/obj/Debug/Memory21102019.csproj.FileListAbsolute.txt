@@ -1,0 +1,15 @@
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\bin\Debug\Memory21102019.exe.config
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\bin\Debug\Memory21102019.exe
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\bin\Debug\Memory21102019.pdb
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019.csprojAssemblyReference.cache
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\MainWindow.g.cs
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\App.g.cs
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019_MarkupCompile.cache
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019_MarkupCompile.lref
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\MainWindow.baml
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019.g.resources
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019.Properties.Resources.resources
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019.csproj.GenerateResource.cache
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019.csproj.CoreCompileInputs.cache
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019.exe
+C:\Users\roycr\Desktop\C#\Memory P 21102910\Memory21102019\obj\Debug\Memory21102019.pdb
