@@ -66,6 +66,7 @@ namespace Memory21102019
                 }
             }
         }
+        //HALLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
         private void CardClick(Object sender, MouseButtonEventArgs e)
         {
