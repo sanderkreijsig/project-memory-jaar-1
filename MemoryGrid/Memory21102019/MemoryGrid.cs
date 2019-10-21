@@ -29,7 +29,7 @@ namespace Memory21102019
         }
 
         /// <summary>
-        /// test
+        /// testkhbilut6yxr lolwtf
         /// </summary>
         /// <param name="cols"></param>
         /// <param name="rows"></param>
@@ -66,6 +66,7 @@ namespace Memory21102019
                 }
             }
         }
+        //HALLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
         private void CardClick(Object sender, MouseButtonEventArgs e)
         {
