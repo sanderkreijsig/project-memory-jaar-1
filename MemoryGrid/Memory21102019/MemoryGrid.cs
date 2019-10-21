@@ -29,7 +29,7 @@ namespace Memory21102019
         }
 
         /// <summary>
-        /// test
+        /// testkhbilut6yxr
         /// </summary>
         /// <param name="cols"></param>
         /// <param name="rows"></param>
