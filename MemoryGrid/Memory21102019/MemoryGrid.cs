@@ -28,7 +28,11 @@ namespace Memory21102019
             
         }
 
-
+        /// <summary>
+        /// test
+        /// </summary>
+        /// <param name="cols"></param>
+        /// <param name="rows"></param>
         
         //GameGridMaken
         private void initializeGameGrid(int cols, int rows)
