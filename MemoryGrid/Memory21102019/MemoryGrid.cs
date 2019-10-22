@@ -27,11 +27,11 @@ namespace Memory21102019
 
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
-            
+
         }
 
-        
-        
+
+
         //GameGridMaken
         private void initializeGameGrid(int cols, int rows)
         {
@@ -48,7 +48,7 @@ namespace Memory21102019
         //add Card Background.
         private void AddImages()
         {
-            List<ImageSource> images =  GetImageList();
+            List<ImageSource> images = GetImageList();
             for (int row = 0; row < rows; row++)
             {
                 for (int column = 0; column < cols; column++)
@@ -68,6 +68,7 @@ namespace Memory21102019
         static int numberOfClicks = 0;
         private Image card;
         static int score;
+        int finishCounter = 0;
         private Image Image1;
         private Image Image2;
         private void CardClick(Object sender, MouseButtonEventArgs e)
@@ -78,6 +79,7 @@ namespace Memory21102019
             numberOfClicks++;
 
             checkCards(card);
+            GameFinish();
         }
 
         private void checkCards(Image card)
@@ -102,7 +104,6 @@ namespace Memory21102019
             if (numberOfClicks == 2)
             {
                 checkPair();
-
                 numberOfClicks = 0;
                 Image1 = null;
                 Image2 = null;
@@ -116,6 +117,7 @@ namespace Memory21102019
             if (plaatjedir == plaatjedir2)
             {
                 score = score + 50;
+                finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
             }
@@ -126,6 +128,14 @@ namespace Memory21102019
             }
             // more code here to check if the 2 cards are a pair.
             // First only a reset after 2 cards.
+        }
+
+        private void GameFinish()
+        {
+            if (finishCounter == 8)
+            {
+                MessageBox.Show("GEFELICITEERD!!!!!!!");
+            }
         }
         private bool hasDelay;
         private async void resetCards(Image card1, Image card2)
