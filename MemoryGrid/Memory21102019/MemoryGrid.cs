@@ -117,10 +117,12 @@ namespace Memory21102019
             string plaatjedir2 = Convert.ToString(Image2.Tag);
             if (plaatjedir == plaatjedir2)
             {
+                score = score + 50; 
             }
             else
             {
                 resetCards(Image1, Image2);
+                score = score - 10;
             }
             // more code here to check if the 2 cards are a pair.
             // First only a reset after 2 cards.
