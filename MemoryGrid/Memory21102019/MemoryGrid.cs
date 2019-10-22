@@ -117,7 +117,6 @@ namespace Memory21102019
             string plaatjedir2 = Convert.ToString(Image2.Tag);
             if (plaatjedir == plaatjedir2)
             {
-                MessageBox.Show("test");
             }
             else
             {
