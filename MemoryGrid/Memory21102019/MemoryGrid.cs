@@ -94,10 +94,12 @@ namespace Memory21102019
                 if (this.Image1 == null)
                 {
                     Image1 = card;
+                    Image1.IsEnabled = false;
                 }
                 else if (this.Image2 == null)
                 {
                     Image2 = card;
+                    Image1.IsEnabled = true;
                 }
             }
 
