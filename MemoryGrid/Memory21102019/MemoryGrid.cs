@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Memory21102019
 {
+    //test voor github
     public class MemoryGrid
     {
         private Grid grid;
@@ -67,12 +69,66 @@ namespace Memory21102019
             }
         }
         //HALLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
+        static int numberOfClicks = 0;
+        private Image card;
+        static int score;
+        private Image Image1;
+        private Image Image2;
         private void CardClick(Object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
+            numberOfClicks++;
+
+            checkCards(card);
+        }
+
+        private void checkCards(Image card)
+        {
+
+            this.card = card;
+            if (numberOfClicks < 2 || numberOfClicks == 2)
+            {
+
+                if (this.Image1 == null)
+                {
+                    Image1 = card;
+                }
+                else if (this.Image2 == null)
+                {
+                    Image2 = card;
+                }
+            }
+
+            if (numberOfClicks == 2)
+            {
+                checkPair();
+
+                numberOfClicks = 0;
+                Image1 = null;
+                Image2 = null;
+            }
+        }
+
+        public void checkPair()
+        {
+            resetCards(Image1, Image2);
+            // more code here to check if the 2 cards are a pair.
+            // First only a reset after 2 cards.
+        }
+        private bool hasDelay;
+        private async void resetCards(Image card1, Image card2)
+        {
+            this.Image1 = card1;
+            this.Image2 = card2;
+
+            hasDelay = true;
+            await Task.Delay(1000);
+
+            card1.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
+            card2.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
+            hasDelay = false;
         }
 
         //Lijst met plaatjes
