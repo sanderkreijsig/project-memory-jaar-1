@@ -7,6 +7,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Input;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Memory21102019
 {
@@ -27,6 +28,9 @@ namespace Memory21102019
 
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
+
+
+
 
         }
 
@@ -116,7 +120,7 @@ namespace Memory21102019
             string plaatjedir2 = Convert.ToString(Image2.Tag);
             if (plaatjedir == plaatjedir2)
             {
-                score = score + 50;
+                score = score + 500;
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
@@ -174,6 +178,14 @@ namespace Memory21102019
             return images;
         }
 
+        public void Restart()
+        {
+            grid.Children.Clear();
+            AddImages();
+            finishCounter = 0;
+        }
+
+        
     }
 }
     

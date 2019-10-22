@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Memory21102019
 {
@@ -24,11 +25,25 @@ namespace Memory21102019
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
+        
 
         public MainWindow()
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
+                                    
         }
+                    
+                  
+        private void Restart_Click(Object sender, RoutedEventArgs e)
+        {
+            grid.Restart();
+            
+        }
+
+        
+        
+
+
     }
 }
