@@ -30,11 +30,7 @@ namespace Memory21102019
             
         }
 
-        /// <summary>
-        /// testkhbilut6yxr lolwtf
-        /// </summary>
-        /// <param name="cols"></param>
-        /// <param name="rows"></param>
+        
         
         //GameGridMaken
         private void initializeGameGrid(int cols, int rows)
@@ -119,7 +115,9 @@ namespace Memory21102019
             string plaatjedir2 = Convert.ToString(Image2.Tag);
             if (plaatjedir == plaatjedir2)
             {
-                score = score + 50; 
+                score = score + 50;
+                Image1.IsEnabled = false;
+                Image2.IsEnabled = false;
             }
             else
             {
