@@ -113,7 +113,16 @@ namespace Memory21102019
 
         public void checkPair()
         {
-            resetCards(Image1, Image2);
+            string plaatjedir = Convert.ToString(Image1.Tag);
+            string plaatjedir2 = Convert.ToString(Image2.Tag);
+            if (plaatjedir == plaatjedir2)
+            {
+                MessageBox.Show("test");
+            }
+            else
+            {
+                resetCards(Image1, Image2);
+            }
             // more code here to check if the 2 cards are a pair.
             // First only a reset after 2 cards.
         }
