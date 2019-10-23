@@ -25,12 +25,15 @@ namespace Memory21102019
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
-        
+
+        Highscore hs;
 
         public MainWindow()
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
+
+            hs = new Highscore(highscoretb);
                                     
         }
                     
