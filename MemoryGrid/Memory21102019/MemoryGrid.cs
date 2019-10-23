@@ -17,15 +17,18 @@ namespace Memory21102019
         private Grid grid;
         private int cols;
         private int rows;
+        private Highscore hs;
 
-        public MemoryGrid(Grid grid, int cols, int rows)
+        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs)
         {
+            this.hs = hs;
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
             initializeGameGrid(cols, rows);
             AddImages();
-
+            hs.ReadHighscore();
+            
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
 
@@ -72,8 +75,7 @@ namespace Memory21102019
         static int numberOfClicks = 0;
         private Image card;
         int score;
-        static int gamescore;
-        static int gamescoreOutput;
+        
         int finishCounter = 0;
         private Image Image1;
         private Image Image2;
@@ -140,7 +142,10 @@ namespace Memory21102019
         {
             if (finishCounter == 8)
             {
-                gamescore = score;
+                
+                hs.WriteHighscore(score);
+                hs.ReadHighscore();
+                MessageBox.Show("Gefeliciteerd");
             }
         }
         private bool hasDelay;
@@ -187,11 +192,7 @@ namespace Memory21102019
             finishCounter = 0;
         }
 
-        internal static int gamescoreOuput()
-        {
-            gamescoreOutput = gamescore;
-            return gamescoreOutput;
-        }
+        
     }
 }
     

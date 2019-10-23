@@ -16,10 +16,11 @@ using System;
 
 namespace Memory21102019
 {
-    class Highscore
+    public class Highscore
     {
         TextBlock HighscoreTextBox = new TextBlock();
         
+
         public Highscore()
         {
             
@@ -29,17 +30,14 @@ namespace Memory21102019
             HighscoreTextBox = tb;
         }
 
-        static int score;
-        public static void Score()
-        {
-           score = MemoryGrid.gamescoreOuput();
-        }
+        
+        
         public void ReadHighscore()
         {
             if (!File.Exists("highscores.txt"))
             {
                 TextWriter tw = new StreamWriter("highscores.txt");
-                tw.Write("300");
+                tw.Write("0");
                 tw.Close();
             }
 
@@ -53,13 +51,14 @@ namespace Memory21102019
 
        
 
-        public void WriteHighscore()
+        public void WriteHighscore(int score)
         {
             if (score >= Convert.ToInt32(HighscoreTextBox.Text))
             {
                 TextWriter tw = new StreamWriter("highscores.txt");
                 tw.WriteLine(score);
                 tw.Close();
+                
             }
         }
     }

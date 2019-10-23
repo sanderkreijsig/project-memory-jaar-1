@@ -31,15 +31,19 @@ namespace Memory21102019
         public MainWindow()
         {
             InitializeComponent();
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
-
             hs = new Highscore(highscoretb);
-                                    
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs);
+
+            
+
+            
+            
         }
                     
                   
         private void Restart_Click(Object sender, RoutedEventArgs e)
         {
+            
             grid.Restart();
             
         }
