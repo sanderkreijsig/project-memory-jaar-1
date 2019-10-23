@@ -40,10 +40,5 @@ namespace Memory21102019
             grid.Restart();
             
         }
-
-        
-        
-
-
     }
 }
