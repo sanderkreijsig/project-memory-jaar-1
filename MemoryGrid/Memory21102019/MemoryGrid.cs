@@ -71,7 +71,9 @@ namespace Memory21102019
         //HALLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
         static int numberOfClicks = 0;
         private Image card;
-        static int score;
+        int score;
+        static int gamescore;
+        static int gamescoreOutput;
         int finishCounter = 0;
         private Image Image1;
         private Image Image2;
@@ -114,13 +116,13 @@ namespace Memory21102019
             }
         }
 
-        public void checkPair()
+        private void checkPair()
         {
             string plaatjedir = Convert.ToString(Image1.Tag);
             string plaatjedir2 = Convert.ToString(Image2.Tag);
             if (plaatjedir == plaatjedir2)
             {
-                score = score + 500;
+                score += 500;
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
@@ -128,7 +130,7 @@ namespace Memory21102019
             else
             {
                 resetCards(Image1, Image2);
-                score = score - 10;
+                score -= 10;
             }
             // more code here to check if the 2 cards are a pair.
             // First only a reset after 2 cards.
@@ -138,7 +140,7 @@ namespace Memory21102019
         {
             if (finishCounter == 8)
             {
-                MessageBox.Show("GEFELICITEERD!!!!!!!");
+                gamescore = score;
             }
         }
         private bool hasDelay;
@@ -185,7 +187,11 @@ namespace Memory21102019
             finishCounter = 0;
         }
 
-        
+        internal static int gamescoreOuput()
+        {
+            gamescoreOutput = gamescore;
+            return gamescoreOutput;
+        }
     }
 }
     
