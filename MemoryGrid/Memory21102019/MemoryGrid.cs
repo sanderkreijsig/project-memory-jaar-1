@@ -118,6 +118,9 @@ namespace Memory21102019
             }
         }
 
+
+        int player1score;
+        int player2score;
         private void checkPair()
         {
             string plaatjedir = Convert.ToString(Image1.Tag);
@@ -132,7 +135,7 @@ namespace Memory21102019
             else
             {
                 resetCards(Image1, Image2);
-                score -= 10;
+                score -= 100;
             }
             hs.WriteCurrentscore(score);
             hs.WriteHighscore(score);
@@ -191,6 +194,8 @@ namespace Memory21102019
             grid.Children.Clear();
             AddImages();
             finishCounter = 0;
+            score = 0;
+            hs.WriteCurrentscore(score);
         }
 
         

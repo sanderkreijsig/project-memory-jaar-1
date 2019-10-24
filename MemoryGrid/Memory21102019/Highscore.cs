@@ -20,6 +20,8 @@ namespace Memory21102019
     {
         TextBlock HighscoreTextBox = new TextBlock();
         TextBlock CurrentscoreTextBox = new TextBlock();
+        TextBlock Player1TextBox = new TextBlock();
+        TextBlock Player2TextBox = new TextBlock();
 
 
 
@@ -27,18 +29,27 @@ namespace Memory21102019
         {
             
         }
-        public Highscore(TextBlock tb, TextBlock tb2)
+        public Highscore(TextBlock tb, TextBlock tb2, TextBlock ps1tb, TextBlock ps2tb)
         {
             HighscoreTextBox = tb;
             CurrentscoreTextBox = tb2;
+            Player1TextBox = ps1tb;
+            Player2TextBox = ps2tb;
         }
 
         public void WriteCurrentscore(int score)
         {
             CurrentscoreTextBox.Text = Convert.ToString(score);
+            
         }
 
+        public void WriteMultiscore(int player1score, int player2score)
+        {
+            Player1TextBox.Text = Convert.ToString(player1score);
+            Player2TextBox.Text = Convert.ToString(player2score);
+        }
 
+          
 
         public void ReadHighscore()
         {

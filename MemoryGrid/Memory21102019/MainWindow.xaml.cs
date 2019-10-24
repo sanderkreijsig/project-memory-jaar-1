@@ -31,13 +31,9 @@ namespace Memory21102019
         public MainWindow()
         {
             InitializeComponent();
-            hs = new Highscore(highscoretb, currentscoretb);
+            hs = new Highscore(highscoretb, currentscoretb, player1score, player2score);
             
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs);
-
-            
-
-            
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs);        
             
         }
                     
