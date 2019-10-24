@@ -184,7 +184,7 @@ namespace Memory21102019
                 {
                     MessageBox.Show("No Winner, Noobs");
                 }
-                else
+                if (player2score > player1score)
                 {
                     MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
                 }
