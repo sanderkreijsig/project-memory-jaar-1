@@ -19,19 +19,27 @@ namespace Memory21102019
     public class Highscore
     {
         TextBlock HighscoreTextBox = new TextBlock();
-        
+        TextBlock CurrentscoreTextBox = new TextBlock();
+
+
 
         public Highscore()
         {
             
         }
-        public Highscore(TextBlock tb)
+        public Highscore(TextBlock tb, TextBlock tb2)
         {
             HighscoreTextBox = tb;
+            CurrentscoreTextBox = tb2;
         }
 
-        
-        
+        public void WriteCurrentscore(int score)
+        {
+            CurrentscoreTextBox.Text = Convert.ToString(score);
+        }
+
+
+
         public void ReadHighscore()
         {
             if (!File.Exists("highscores.txt"))

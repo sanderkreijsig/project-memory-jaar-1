@@ -134,8 +134,9 @@ namespace Memory21102019
                 resetCards(Image1, Image2);
                 score -= 10;
             }
-            // more code here to check if the 2 cards are a pair.
-            // First only a reset after 2 cards.
+            hs.WriteCurrentscore(score);
+            hs.WriteHighscore(score);
+            hs.ReadHighscore();
         }
 
         private void GameFinish()
