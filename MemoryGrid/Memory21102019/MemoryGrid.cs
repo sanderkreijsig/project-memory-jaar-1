@@ -222,7 +222,10 @@ namespace Memory21102019
             AddImages();
             finishCounter = 0;
             score = 0;
+            player1score = 0;
+            player2score = 0;
             hs.WriteCurrentscore(score);
+            hs.WriteMultiscore(player1score, player2score);
         }
 
         
