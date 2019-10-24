@@ -18,6 +18,8 @@ namespace Memory21102019
         private int cols;
         private int rows;
         private Highscore hs;
+        bool CurrentPlayer = true;
+
 
         public MemoryGrid(Grid grid, int cols, int rows, Highscore hs)
         {
@@ -29,6 +31,7 @@ namespace Memory21102019
             AddImages();
             hs.ReadHighscore();
             
+
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
 
@@ -75,7 +78,7 @@ namespace Memory21102019
         static int numberOfClicks = 0;
         private Image card;
         int score;
-        
+
         int finishCounter = 0;
         private Image Image1;
         private Image Image2;
@@ -131,17 +134,32 @@ namespace Memory21102019
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
+
             }
             else
             {
                 resetCards(Image1, Image2);
                 score -= 100;
+                if (CurrentPlayer == true)
+                {
+                    CurrentPlayer = false;
+                    MessageBox.Show("Speler 2 is aan de beurt");
+                }
+                else
+                {
+                    CurrentPlayer = true;
+                    MessageBox.Show("Speler 1 is aan de beurt");
+
+                }
+
+
             }
             hs.WriteCurrentscore(score);
             hs.WriteHighscore(score);
             hs.ReadHighscore();
         }
 
+        
         private void GameFinish()
         {
             if (finishCounter == 8)

@@ -28,6 +28,8 @@ namespace Memory21102019
 
         Highscore hs;
 
+        
+
         public MainWindow()
         {
             InitializeComponent();
