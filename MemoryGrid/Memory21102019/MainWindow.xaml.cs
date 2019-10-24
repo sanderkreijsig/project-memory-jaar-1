@@ -28,12 +28,15 @@ namespace Memory21102019
 
         Highscore hs;
 
+        public TwoPlayerVersie TP;
+        
+
         public MainWindow()
         {
             InitializeComponent();
             hs = new Highscore(highscoretb);
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs);
-
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, TP);
+            
             
 
             

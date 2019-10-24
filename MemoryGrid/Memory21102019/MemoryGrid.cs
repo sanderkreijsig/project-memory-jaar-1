@@ -18,17 +18,21 @@ namespace Memory21102019
         private int cols;
         private int rows;
         private Highscore hs;
+        private TwoPlayerVersie TP;
 
-        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs)
+
+        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, TwoPlayerVersie TP)
         {
             this.hs = hs;
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
+            this.TP = TP; 
             initializeGameGrid(cols, rows);
             AddImages();
             hs.ReadHighscore();
             
+
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
 
@@ -75,7 +79,7 @@ namespace Memory21102019
         static int numberOfClicks = 0;
         private Image card;
         int score;
-        
+
         int finishCounter = 0;
         private Image Image1;
         private Image Image2;
@@ -128,16 +132,22 @@ namespace Memory21102019
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
+
             }
             else
             {
                 resetCards(Image1, Image2);
-                score -= 10;
+                score -= 100;
+                TP.WhoseTurn();
+
+                
             }
-            // more code here to check if the 2 cards are a pair.
-            // First only a reset after 2 cards.
+            hs.WriteHighscore(score);
+            hs.ReadHighscore();
+            
         }
 
+        
         private void GameFinish()
         {
             if (finishCounter == 8)
