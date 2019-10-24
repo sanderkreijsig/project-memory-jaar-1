@@ -21,7 +21,7 @@ namespace Memory21102019
         bool CurrentPlayer = true;
 
 
-        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, TwoPlayerVersie TP)
+        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs)
         {
             this.hs = hs;
             this.grid = grid;

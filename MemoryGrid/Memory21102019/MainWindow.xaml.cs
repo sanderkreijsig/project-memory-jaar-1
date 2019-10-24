@@ -36,7 +36,7 @@ namespace Memory21102019
                       
             hs = new Highscore(highscoretb, currentscoretb);
             
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, TP);
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs);
 
             
 
