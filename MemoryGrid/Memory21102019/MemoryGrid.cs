@@ -18,7 +18,7 @@ namespace Memory21102019
         private int cols;
         private int rows;
         private Highscore hs;
-        private TwoPlayerVersie TP;
+        bool CurrentPlayer = true;
 
 
         public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, TwoPlayerVersie TP)
@@ -27,7 +27,6 @@ namespace Memory21102019
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
-            this.TP = TP; 
             initializeGameGrid(cols, rows);
             AddImages();
             hs.ReadHighscore();
@@ -121,7 +120,7 @@ namespace Memory21102019
                 Image2 = null;
             }
         }
-
+       
         private void checkPair()
         {
             string plaatjedir = Convert.ToString(Image1.Tag);
@@ -138,9 +137,19 @@ namespace Memory21102019
             {
                 resetCards(Image1, Image2);
                 score -= 100;
-                TP.WhoseTurn();
+                if (CurrentPlayer == true)
+                {
+                    CurrentPlayer = false;
+                    MessageBox.Show("Speler 2 is aan de beurt");
+                }
+                else
+                {
+                    CurrentPlayer = true;
+                    MessageBox.Show("Speler 1 is aan de beurt");
 
-                
+                }
+
+
             }
             hs.WriteCurrentscore(score);
             hs.WriteHighscore(score);
