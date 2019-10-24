@@ -134,7 +134,14 @@ namespace Memory21102019
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
-
+                if (CurrentPlayer == true)
+                {
+                    player1score += 500;
+                }
+                else
+                {
+                    player2score += 500;
+                }
             }
             else
             {
@@ -144,12 +151,13 @@ namespace Memory21102019
                 {
                     CurrentPlayer = false;
                     MessageBox.Show("Speler 2 is aan de beurt");
+                    player1score -= 100;
                 }
                 else
                 {
                     CurrentPlayer = true;
                     MessageBox.Show("Speler 1 is aan de beurt");
-
+                    player2score -= 100;
                 }
 
 
@@ -157,6 +165,7 @@ namespace Memory21102019
             hs.WriteCurrentscore(score);
             hs.WriteHighscore(score);
             hs.ReadHighscore();
+            hs.WriteMultiscore(player1score, player2score);
         }
 
         
