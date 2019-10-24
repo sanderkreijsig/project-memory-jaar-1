@@ -13,7 +13,9 @@
         <Grid Margin="672,10,0,0">
             <Label Content="Highscore: " Margin="0,0,0,352"/>
             <TextBlock x:Name="highscoretb" Text="" Margin="71,5,0,352"></TextBlock>
+            <Label Content="Score: " Margin="0,62,0,288"/>
+            <TextBlock x:Name="currentscoretb" Text="" Margin="47,67,0,282"></TextBlock>
             <Button Click="Restart_Click" Content="Restart" Margin="10,357,10,10"/>
-        </Grid>  
+        </Grid>
     </Grid>
 </Window>

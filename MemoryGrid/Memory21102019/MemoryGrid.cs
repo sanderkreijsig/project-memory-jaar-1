@@ -142,9 +142,9 @@ namespace Memory21102019
 
                 
             }
+            hs.WriteCurrentscore(score);
             hs.WriteHighscore(score);
             hs.ReadHighscore();
-            
         }
 
         
