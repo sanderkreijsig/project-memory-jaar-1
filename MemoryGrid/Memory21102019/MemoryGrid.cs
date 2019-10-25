@@ -74,7 +74,7 @@ namespace Memory21102019
                 }
             }
         }
-        //HALLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+        
         static int numberOfClicks = 0;
         private Image card;
         int score;
