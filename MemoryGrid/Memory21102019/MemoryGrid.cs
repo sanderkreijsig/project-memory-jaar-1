@@ -151,13 +151,13 @@ namespace Memory21102019
                 {
                     CurrentPlayer = false;
                     MessageBox.Show("Speler 2 is aan de beurt");
-                    player1score -= 00;
+                    player1score -= 100;
                 }
                 else
                 {
                     CurrentPlayer = true;
                     MessageBox.Show("Speler 1 is aan de beurt");
-                    player2score -= 00;
+                    player2score -= 100;
                 }
 
 
@@ -233,10 +233,7 @@ namespace Memory21102019
             AddImages();
             finishCounter = 0;
             score = 0;
-            player1score = 0;
-            player2score = 0;
             hs.WriteCurrentscore(score);
-            hs.WriteMultiscore(player1score, player2score);
         }
 
         
