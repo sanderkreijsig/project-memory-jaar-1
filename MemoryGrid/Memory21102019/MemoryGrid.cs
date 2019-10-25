@@ -151,13 +151,13 @@ namespace Memory21102019
                 {
                     CurrentPlayer = false;
                     MessageBox.Show("Speler 2 is aan de beurt");
-                    player1score -= 100;
+                    player1score -= 00;
                 }
                 else
                 {
                     CurrentPlayer = true;
                     MessageBox.Show("Speler 1 is aan de beurt");
-                    player2score -= 100;
+                    player2score -= 00;
                 }
 
 
@@ -176,7 +176,18 @@ namespace Memory21102019
                 
                 hs.WriteHighscore(score);
                 hs.ReadHighscore();
-                MessageBox.Show("Gefeliciteerd");
+                if (player1score > player2score)
+                {
+                    MessageBox.Show("Speler 1 heeft gewonnen, yeah!!");
+                }
+                if (player1score == player2score)
+                {
+                    MessageBox.Show("No Winner, Noobs");
+                }
+                if (player2score > player1score)
+                {
+                    MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
+                }
             }
         }
         private bool hasDelay;
@@ -222,7 +233,10 @@ namespace Memory21102019
             AddImages();
             finishCounter = 0;
             score = 0;
+            player1score = 0;
+            player2score = 0;
             hs.WriteCurrentscore(score);
+            hs.WriteMultiscore(player1score, player2score);
         }
 
         
