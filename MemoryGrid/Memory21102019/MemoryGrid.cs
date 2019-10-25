@@ -18,15 +18,18 @@ namespace Memory21102019
         private int cols;
         private int rows;
         private Highscore hs;
+        private NameInput ni;
         bool CurrentPlayer = true;
+        string username1;
+        string username2;
 
-
-        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs)
+        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni)
         {
             this.hs = hs;
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
+            this.ni = ni;
             initializeGameGrid(cols, rows);
             AddImages();
             hs.ReadHighscore();
@@ -34,12 +37,13 @@ namespace Memory21102019
 
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
-
-
-
-
         }
 
+        public MemoryGrid(string UName1, string UName2)
+        {
+            username1 = UName1;
+            username2 = UName2;
+        }
 
 
         //GameGridMaken
@@ -168,9 +172,10 @@ namespace Memory21102019
             hs.WriteMultiscore(player1score, player2score);
         }
 
-        
+        string winner;
         private void GameFinish()
         {
+            
             if (finishCounter == 8)
             {
                 
@@ -178,16 +183,20 @@ namespace Memory21102019
                 hs.ReadHighscore();
                 if (player1score > player2score)
                 {
+                    winner = username1;
                     MessageBox.Show("Speler 1 heeft gewonnen, yeah!!");
                 }
                 if (player1score == player2score)
                 {
+                    winner = "gelijkspel";
                     MessageBox.Show("No Winner, Noobs");
                 }
                 if (player1score < player2score)
                 {
+                    winner = username2;
                     MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
                 }
+                ni.Save2PGame(player1score, player2score, winner);
             }
         }
         private bool hasDelay;
