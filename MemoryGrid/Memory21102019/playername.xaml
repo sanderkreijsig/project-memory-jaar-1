@@ -1,0 +1,20 @@
+﻿<Page x:Class="Memory21102019.playername"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Memory21102019"
+      mc:Ignorable="d" 
+      d:DesignHeight="1100" d:DesignWidth="1100"
+      Title="playername">
+
+    <Grid Background="SandyBrown">
+     
+
+        <TextBox FontSize="60" TextAlignment="Center" Margin="0,0,0,993" VerticalAlignment="Center" Height="107" >1 Speler</TextBox>
+        <Button Content="start" FontSize="45" Margin="678,526,173,510" VerticalAlignment="Center" Click="Button_Click"  />
+        <Button Content="Home" FontSize="40" Margin="889,0,0,993" Click="Button_Click_1"  />
+        <Frame x:Name="Playernameref"  />
+
+    </Grid>
+</Page>

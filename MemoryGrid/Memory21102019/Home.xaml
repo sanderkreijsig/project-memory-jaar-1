@@ -1,0 +1,21 @@
+﻿<Page x:Class="Memory21102019.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Memory21102019"
+      mc:Ignorable="d" 
+      d:DesignHeight="1100" d:DesignWidth="1100"
+      Title="Home">
+
+    <Grid Background="SandyBrown" Height="1100" Width="1100">
+
+
+        <TextBlock FontSize="55" Margin="356,87,379,913" HorizontalAlignment="Center"> Memory Game</TextBlock>
+        <Button Content="1 Speler " FontSize="45" Margin="397,192,421,826" HorizontalAlignment="Center" Width="282" Click="Button_Click"/>
+        <Button Content="2 Spelers " FontSize="45" Margin="397,274,421,744" HorizontalAlignment="Center" Width="282" Click="Button_Click_1"/>
+        <Button Content="Highscore" FontSize="45" Margin="397,405,421,613" HorizontalAlignment="Center" Width="282" Click="Button_Click_2"/>
+
+        <Frame x:Name="Homeref" />
+    </Grid>
+</Page>
