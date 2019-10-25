@@ -41,8 +41,10 @@ namespace Memory21102019
                     
                   
         private void Restart_Click(Object sender, RoutedEventArgs e)
-        { 
-            grid.Restart();     
+        {
+            
+            grid.Restart();
+            
         }
     }
 }

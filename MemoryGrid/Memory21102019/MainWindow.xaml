@@ -22,8 +22,6 @@
             <Label Content="Player 2:  " Margin="0,143,0,231"/>
             <TextBlock x:Name="player2score" Text="" Margin="58,148,0,231"></TextBlock>
             <Button Click="Restart_Click" Content="Restart" Margin="10,357,10,10"/>
-            
-
         </Grid>
     </Grid>
 </Window>
