@@ -27,6 +27,7 @@ namespace Memory21102019
         MemoryGrid grid;
 
         Highscore hs;
+        NameInput ni;
 
         
 
@@ -34,7 +35,7 @@ namespace Memory21102019
         {
             InitializeComponent();
             hs = new Highscore(highscoretb, currentscoretb, player1score, player2score);
-            
+            ni = new NameInput(UName1Input, UName2Input, UName1Label, UName2Label);
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs);        
             
         }
@@ -45,6 +46,12 @@ namespace Memory21102019
             
             grid.Restart();
             
+        }
+
+        private void NameInput_Click(Object sender, RoutedEventArgs e)
+        {
+
+            ni.WriteNameInput();
         }
     }
 }
