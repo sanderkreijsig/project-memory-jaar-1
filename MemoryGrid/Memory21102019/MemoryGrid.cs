@@ -172,7 +172,7 @@ namespace Memory21102019
             hs.WriteMultiscore(player1score, player2score);
         }
 
-        string winner;
+        
         private void GameFinish()
         {
             
@@ -183,20 +183,21 @@ namespace Memory21102019
                 hs.ReadHighscore();
                 if (player1score > player2score)
                 {
-                    winner = username1;
+                    
                     MessageBox.Show("Speler 1 heeft gewonnen, yeah!!");
                 }
                 if (player1score == player2score)
                 {
-                    winner = "gelijkspel";
+                    
                     MessageBox.Show("No Winner, Noobs");
                 }
                 if (player1score < player2score)
                 {
-                    winner = username2;
+                   
                     MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
                 }
-                ni.Save2PGame(player1score, player2score, winner);
+                
+                ni.Save2PGame(player1score, player2score);
             }
         }
         private bool hasDelay;

@@ -28,6 +28,7 @@ namespace Memory21102019
         string UName1;
         string UName2;
         
+        
         MemoryGrid grid;
         public NameInput()
         {
@@ -42,10 +43,7 @@ namespace Memory21102019
             this.UName2Label = UName2Label;
             
         }
-        public NameInput(string winner)
-        {
-            this.winner = winner;
-        }
+     
 
         public void WriteNameInput()
         {
@@ -53,14 +51,29 @@ namespace Memory21102019
             UName2 = UName2Input.Text;
             UName1Label.Content = UName1;
             UName2Label.Content = UName2;
+            
         }
-
-        public void Save2PGame(int player1score, int player2score, string winner)
+        string winner;
+        public void Save2PGame(int player1score, int player2score)
         {
         
             TextWriter tw = new StreamWriter("GameSaves.txt");
-            
-                tw.WriteLine(UName1 + " " + player1score);
+            if (player1score > player2score)
+            {
+                winner = UName1;
+                
+            }
+            if (player1score == player2score)
+            {
+                winner = "gelijkspel";
+                
+            }
+            if (player1score < player2score)
+            {
+                winner = UName2;
+                
+            }
+            tw.WriteLine(UName1 + " " + player1score);
                 tw.WriteLine(UName2 + " " + player2score);
                 tw.WriteLine("de winner is " + winner);
                 tw.Close();
