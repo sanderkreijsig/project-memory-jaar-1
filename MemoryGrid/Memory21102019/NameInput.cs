@@ -54,10 +54,12 @@ namespace Memory21102019
             
         }
         string winner;
+        int GameCount = 0;
         public void Save2PGame(int player1score, int player2score)
         {
-        
-            TextWriter tw = new StreamWriter("GameSaves.txt");
+            GameCount++;
+            TextWriter tw = new StreamWriter("GameSaves.txt", true);
+
             if (player1score > player2score)
             {
                 winner = UName1;
@@ -73,10 +75,9 @@ namespace Memory21102019
                 winner = UName2;
                 
             }
-            tw.WriteLine(UName1 + " " + player1score);
-                tw.WriteLine(UName2 + " " + player2score);
-                tw.WriteLine("de winner is " + winner);
-                tw.Close();
+            
+            tw.WriteLine("Spel " + GameCount + ": " + UName1 + " " + player1score + " " + UName2 + " " + player2score + " " + "Winner: " + winner);
+            tw.Close();
             }
 
    
