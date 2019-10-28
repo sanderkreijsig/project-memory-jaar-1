@@ -14,6 +14,7 @@ namespace Memory21102019
     //test voor github
     public class MemoryGrid
     {
+        //Variabelen waar we mee werken.
         private Grid grid;
         private int cols;
         private int rows;
@@ -25,6 +26,7 @@ namespace Memory21102019
 
         public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni)
         {
+            //constructor
             this.hs = hs;
             this.grid = grid;
             this.cols = cols;
@@ -33,12 +35,13 @@ namespace Memory21102019
             initializeGameGrid(cols, rows);
             AddImages();
             hs.ReadHighscore();
-            
+
 
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
         }
 
+        //Namen uit de mainwindow toevoegen.
         public MemoryGrid(string UName1, string UName2)
         {
             username1 = UName1;
@@ -46,9 +49,15 @@ namespace Memory21102019
         }
 
 
-        //GameGridMaken
+
+        /// <summary>
+        ///ForLoop om het speelveld aan te maken 
+        /// </summary>
+        /// <param name="cols"> Aantal kolommen voor het speelveld</param>
+        /// <param name="rows">Aantal kolommen voor het speelveld</param>
         private void initializeGameGrid(int cols, int rows)
         {
+
             for (int i = 0; i < rows; i++)
             {
                 grid.RowDefinitions.Add(new RowDefinition());
@@ -59,7 +68,9 @@ namespace Memory21102019
                 grid.ColumnDefinitions.Add(new ColumnDefinition());
             }
         }
-        //add Card Background.
+
+        //Lijstmaken van de achterkant van de kaarten. 
+        //CardClick event aangemaakt. 
         private void AddImages()
         {
             List<ImageSource> images = GetImageList();
@@ -78,7 +89,7 @@ namespace Memory21102019
                 }
             }
         }
-        
+
         static int numberOfClicks = 0;
         private Image card;
         int score;
@@ -86,6 +97,8 @@ namespace Memory21102019
         int finishCounter = 0;
         private Image Image1;
         private Image Image2;
+
+        //Kaarten omdraaien, ++ nummeroffclicks toevoegen
         private void CardClick(Object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
@@ -96,7 +109,7 @@ namespace Memory21102019
             checkCards(card);
             GameFinish();
         }
-
+        //kijken of de kaarten aangeklikt zijn en omdraaien en deze tijdelijk opslaan in variabelen 
         private void checkCards(Image card)
         {
 
@@ -128,6 +141,8 @@ namespace Memory21102019
 
         int player1score;
         int player2score;
+
+        //Kijkt of de kaarten gelijk zijn, houd bij waar de punten heen geen, of dit speler 1 of speler 2 is. update de punten.
         private void checkPair()
         {
             string plaatjedir = Convert.ToString(Image1.Tag);
@@ -172,35 +187,36 @@ namespace Memory21102019
             hs.WriteMultiscore(player1score, player2score);
         }
 
-        
+        // als finishcounter 8 is is het spel klaar.
         private void GameFinish()
         {
-            
+
             if (finishCounter == 8)
             {
-                
+
                 hs.WriteHighscore(score);
                 hs.ReadHighscore();
                 if (player1score > player2score)
                 {
-                    
+
                     MessageBox.Show("Speler 1 heeft gewonnen, yeah!!");
                 }
                 if (player1score == player2score)
                 {
-                    
+
                     MessageBox.Show("No Winner, Noobs");
                 }
                 if (player1score < player2score)
                 {
-                   
+
                     MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
                 }
-                
+
                 ni.Save2PGame(player1score, player2score);
             }
         }
         private bool hasDelay;
+        // als kaarten niet gelijk zijn, draait hij terug naar achtergrond met een delay.
         private async void resetCards(Image card1, Image card2)
         {
             this.Image1 = card1;
@@ -214,7 +230,7 @@ namespace Memory21102019
             hasDelay = false;
         }
 
-        //Lijst met plaatjes
+        //plaatjes aan lijst toevoegen
         private List<ImageSource> GetImageList()
         {
             List<ImageSource> images = new List<ImageSource>();
@@ -224,7 +240,7 @@ namespace Memory21102019
                 ImageSource source = new BitmapImage(new Uri("Icons/" + imageNr + ".png", UriKind.Relative));
                 images.Add(source);
             }
-            //shuffle
+            //plaatjes op random rijen en kolommen zetten.
             Random random = new Random();
             for (int i = 0; i < (rows * cols); i++)
             {
@@ -236,7 +252,7 @@ namespace Memory21102019
 
             return images;
         }
-
+        //restartknop zodat alles weer naar het begin wordt gezet.
         public void Restart()
         {
             grid.Children.Clear();
@@ -249,10 +265,10 @@ namespace Memory21102019
             hs.WriteCurrentscore(score);
         }
 
-        
+
     }
 }
-    
-    
+
+
 
 
