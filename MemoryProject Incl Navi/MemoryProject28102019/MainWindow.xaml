@@ -12,11 +12,11 @@
         </Grid.Background>
 
         <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
-        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
-        <Button Content="1 Speler Spel" Margin="0,0,0,0" Click="Button_Click" Height="35" Width="100"/>
-            <Button Content="2 Speler Spel" Margin="0,0,0,0" Height="35" Width="100" Click="Button_Click_1"/>
-            <Button Content="HighScores" Margin="0,0,0,0" Width="100" Height="35"/>
-            <Button Content="Home" Margin="0,0,0,0" Width="100" Height="35" Click="Button_Click_2"/>
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <Button Content="1 Speler" Margin="0,5,10,0" Click="Button_Click" Height="30" Width="100"/>
+            <Button Content="2 Spelers" Margin="0,5,10,0" Height="30" Width="100" Click="Button_Click_1"/>
+            <Button Content="Highscores" Margin="0,5,10,0" Width="100" Click="Button_Click_2" Height="30"/>
+            <Button Content="Home" Margin="0,5,0,0" Width="100" Height="30" Click="Button_Click_3"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>

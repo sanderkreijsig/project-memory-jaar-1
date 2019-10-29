@@ -11,9 +11,9 @@
     <Grid>
         <Frame x:Name="OnePlayerInputFrame"/>
         <StackPanel  Orientation="Vertical" Margin="0,0,0,35" VerticalAlignment="Center">
-            <TextBlock  FontSize="25" Height="50" Width="150" Margin="0,0,0,35">Uw Naam:</TextBlock>
+            <TextBlock TextAlignment="Center" FontSize="25" Height="50" Width="150" Margin="0,0,0,0" HorizontalAlignment="Center">Naam:</TextBlock>
             <TextBox x:Name="PlayerInput" Text="" Height="50" Width="150" Margin="0,0,0,35" TextChanged="PlayerInput_TextChanged"/>
-            <Button Content="Start Game" Margin="0,0,0,35" x:Name="StartTwoPlayerBTN" Click="StartOnePlayerBTN_Click" Height="50" Width="150" />
+            <Button Content="Start spel" Margin="0,0,0,35" x:Name="StartTwoPlayerBTN" Click="StartOnePlayerBTN_Click" Height="50" Width="150" />
         </StackPanel>
     </Grid>
 </Page>

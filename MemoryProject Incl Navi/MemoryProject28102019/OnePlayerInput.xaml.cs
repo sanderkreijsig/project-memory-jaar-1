@@ -20,6 +20,7 @@ namespace MemoryProject28102019
     /// </summary>
     public partial class OnePlayerInput : Page
     {
+        
         public OnePlayerInput()
         {
             InitializeComponent();

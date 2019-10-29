@@ -39,8 +39,16 @@ namespace MemoryProject28102019
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            Main.Content = new HighscorePage();
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
         }
+
+        
     }
 }

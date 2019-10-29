@@ -25,6 +25,7 @@ namespace MemoryProject28102019
         string username1;
         string username2;
         private bool OnePlayerGameBool;
+        TwoPlayerGame tpg;
 
         public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool)
         {
@@ -43,6 +44,7 @@ namespace MemoryProject28102019
 
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
+            tpg = new TwoPlayerGame();
         }
 
 
@@ -172,13 +174,13 @@ namespace MemoryProject28102019
                     if (CurrentPlayer == true)
                     {
                         CurrentPlayer = false;
-                        MessageBox.Show("Player 1");
+                        MessageBox.Show("Speler 2 is nu aan de beurt");
                         player1score -= 100;
                     }
                     else
                     {
                         CurrentPlayer = true;
-                        MessageBox.Show("Player 2");
+                        MessageBox.Show("Speler 1 is nu aan de beurt");
                         player2score -= 100;
                     }
                 }
@@ -216,8 +218,9 @@ namespace MemoryProject28102019
                     {
 
                         MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
-                    }                
+                    }
                     //ni.Save2PGame(player1score, player2score);
+                    tpg.Save2PGame(player1score, player2score);
                 }
 
 

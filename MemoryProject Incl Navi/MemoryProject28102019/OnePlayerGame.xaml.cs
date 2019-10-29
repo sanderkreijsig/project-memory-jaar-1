@@ -36,7 +36,7 @@ namespace MemoryProject28102019
             this.PlayerInput = PlayerInput;
 
             InitializeComponent();
-            hs = new Highscore(highscoretb, currentscoretb);
+            hs = new Highscore(highscoretb, currentscoretb, PlayerInput);
             //main = new MainWindow();
             //ni = new NameInput(UName1Label);
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, ni, true);
