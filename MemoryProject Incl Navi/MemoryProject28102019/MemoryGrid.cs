@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
+
 namespace MemoryProject28102019
 {
     public class MemoryGrid
@@ -28,7 +29,7 @@ namespace MemoryProject28102019
         TwoPlayerGame tpg;
 
         public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool)
-        {
+        { 
             //constructor
             this.hs = hs;
             this.grid = grid;
@@ -100,12 +101,16 @@ namespace MemoryProject28102019
         private void CardClick(Object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
-            ImageSource front = (ImageSource)card.Tag;
-            card.Source = front;
-            numberOfClicks++;
+            if (numberOfClicks < 2)
+            {
+                ImageSource front = (ImageSource)card.Tag;
+                card.Source = front;
+                numberOfClicks++;
 
-            checkCards(card);
-            GameFinish();
+                checkCards(card);
+                GameFinish();
+            }
+            
         }
         //kijken of de kaarten aangeklikt zijn en omdraaien en deze tijdelijk opslaan in variabelen 
         private void checkCards(Image card)
@@ -129,8 +134,9 @@ namespace MemoryProject28102019
 
             if (numberOfClicks == 2)
             {
+                
                 checkPair();
-                numberOfClicks = 0;
+               
                 Image1 = null;
                 Image2 = null;
             }
@@ -150,6 +156,7 @@ namespace MemoryProject28102019
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
+                numberOfClicks = 0;
 
                 if (OnePlayerGameBool == false)
                 {
@@ -174,13 +181,11 @@ namespace MemoryProject28102019
                     if (CurrentPlayer == true)
                     {
                         CurrentPlayer = false;
-                        MessageBox.Show("Speler 2 is nu aan de beurt");
                         player1score -= 100;
                     }
                     else
                     {
                         CurrentPlayer = true;
-                        MessageBox.Show("Speler 1 is nu aan de beurt");
                         player2score -= 100;
                     }
                 }
@@ -207,7 +212,7 @@ namespace MemoryProject28102019
                     if (player1score > player2score)
                     {
 
-                        MessageBox.Show("Speler 1 heeft gewonnen, yeah!!");
+                        MessageBox.Show("Speler 1 heeft gewonnen, gay!!");
                     }
                     if (player1score == player2score)
                     {
@@ -216,7 +221,6 @@ namespace MemoryProject28102019
                     }
                     if (player1score < player2score)
                     {
-
                         MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
                     }
                     //ni.Save2PGame(player1score, player2score);
@@ -226,19 +230,20 @@ namespace MemoryProject28102019
 
             }
         }
-        private bool hasDelay;
+        //private bool hasDelay;
         // als kaarten niet gelijk zijn, draait hij terug naar achtergrond met een delay.
         private async void resetCards(Image card1, Image card2)
         {
             this.Image1 = card1;
             this.Image2 = card2;
 
-            hasDelay = true;
-            await Task.Delay(1000);
+            //hasDelay = true;
+            await Task.Delay(750);
 
             card1.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
             card2.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
-            hasDelay = false;
+            //hasDelay = false;
+            numberOfClicks = 0;
         }
 
         //plaatjes aan lijst toevoegen
@@ -275,6 +280,7 @@ namespace MemoryProject28102019
             hs.WriteMultiscore(player1score, player2score);
             hs.WriteCurrentscore(score);
         }
+
 
 
     }
