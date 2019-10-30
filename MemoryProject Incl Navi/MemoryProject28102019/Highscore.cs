@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Controls;
+using System.Linq;
 
 namespace MemoryProject28102019
 {
@@ -52,16 +53,16 @@ namespace MemoryProject28102019
             if (!File.Exists("highscores.txt"))
             {
                 TextWriter tw = new StreamWriter("highscores.txt");
-                tw.Write("Playername: " + "0");
+                tw.Write("0");
                 tw.Close();
             }
 
             TextReader tr = new StreamReader("highscores.txt");
 
-            HighscoreTextBox.Text = tr.ReadLine();
+            string output = tr.ReadLine();
+            string outputScore = output.Substring(output.IndexOf(' ') + 1);
+            HighscoreTextBox.Text = outputScore;
             tr.Close();
-
-
         }
 
 
@@ -71,11 +72,8 @@ namespace MemoryProject28102019
             if (score >= Convert.ToInt32(HighscoreTextBox.Text))
             {
                 TextWriter tw = new StreamWriter("highscores.txt");
-
-                
-                tw.WriteLine(score);
+                tw.WriteLine(PlayerInput + " " + score);
                 tw.Close();
-
             }
         }
     }
