@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
         
         <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="40" HorizontalAlignment="Center">Highscore:</Label>
-        <TextBlock x:Name="HighscorePlayer" FontSize="35" Grid.Column="1" Grid.Row="1" Text="PlayerName" HorizontalAlignment="Center" MinWidth="200" TextAlignment="Center"></TextBlock>
-        <TextBlock x:Name="HighscoreScore" FontSize="35" Grid.Column="2" Grid.Row="2" Text="9999" HorizontalAlignment="Center" MinWidth="200" TextAlignment="Center"></TextBlock>
+        
+        <TextBlock x:Name="HighscoreScore" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Text="9999" HorizontalAlignment="Center" MinWidth="200" TextAlignment="Center"></TextBlock>
     </Grid>
 </Page>

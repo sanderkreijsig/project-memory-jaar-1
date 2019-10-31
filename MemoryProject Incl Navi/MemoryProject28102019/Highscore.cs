@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Controls;
+using System.Linq;
 
 namespace MemoryProject28102019
 {
@@ -10,7 +11,7 @@ namespace MemoryProject28102019
         TextBlock CurrentscoreTextBox = new TextBlock();
         TextBlock Player1TextBox = new TextBlock();
         TextBlock Player2TextBox = new TextBlock();
-        string PlayerInput;
+        string PlayerInputGetrimt;
 
 
         public Highscore()
@@ -18,11 +19,11 @@ namespace MemoryProject28102019
 
         }
 
-        public Highscore(TextBlock tb, TextBlock tb2, string PlayerInput)
+        public Highscore(TextBlock tb, TextBlock tb2, string PlayerInputGetrimt)
         {
             HighscoreTextBox = tb;
             CurrentscoreTextBox = tb2;
-            this.PlayerInput = PlayerInput;
+            this.PlayerInputGetrimt = PlayerInputGetrimt;
 
         }
         public Highscore(/*TextBlock tb, TextBlock tb2, */TextBlock ps1tb, TextBlock ps2tb)
@@ -52,16 +53,16 @@ namespace MemoryProject28102019
             if (!File.Exists("highscores.txt"))
             {
                 TextWriter tw = new StreamWriter("highscores.txt");
-                tw.Write("Playername: " + "0");
+                tw.Write("0");
                 tw.Close();
             }
 
             TextReader tr = new StreamReader("highscores.txt");
 
-            HighscoreTextBox.Text = tr.ReadLine();
+            string output = tr.ReadLine();
+            string outputScore = output.Substring(output.IndexOf(' ') + 1);
+            HighscoreTextBox.Text = outputScore;
             tr.Close();
-
-
         }
 
 
@@ -71,11 +72,8 @@ namespace MemoryProject28102019
             if (score >= Convert.ToInt32(HighscoreTextBox.Text))
             {
                 TextWriter tw = new StreamWriter("highscores.txt");
-
-                
-                tw.WriteLine(score);
+                tw.WriteLine(PlayerInputGetrimt + " " + score);
                 tw.Close();
-
             }
         }
     }

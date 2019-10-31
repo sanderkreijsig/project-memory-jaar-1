@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
+
 namespace MemoryProject28102019
 {
     public class MemoryGrid
@@ -112,12 +113,16 @@ namespace MemoryProject28102019
         private void CardClick(Object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
-            ImageSource front = (ImageSource)card.Tag;
-            card.Source = front;
-            numberOfClicks++;
+            if (numberOfClicks < 2)
+            {
+                ImageSource front = (ImageSource)card.Tag;
+                card.Source = front;
+                numberOfClicks++;
 
-            checkCards(card);
-            GameFinish();
+                checkCards(card);
+                GameFinish();
+            }
+            
         }
         //kijken of de kaarten aangeklikt zijn en omdraaien en deze tijdelijk opslaan in variabelen 
         private void checkCards(Image card)
@@ -141,8 +146,9 @@ namespace MemoryProject28102019
 
             if (numberOfClicks == 2)
             {
+                
                 checkPair();
-                numberOfClicks = 0;
+               
                 Image1 = null;
                 Image2 = null;
             }
@@ -162,6 +168,7 @@ namespace MemoryProject28102019
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;
+                numberOfClicks = 0;
 
                 if (OnePlayerGameBool == false)
                 {
@@ -225,7 +232,7 @@ namespace MemoryProject28102019
                     if (player1score > player2score)
                     {
 
-                        MessageBox.Show("Speler 1 heeft gewonnen, yeah!!");
+                        MessageBox.Show("Speler 1 heeft gewonnen, gay!!");
                     }
                     if (player1score == player2score)
                     {
@@ -234,7 +241,6 @@ namespace MemoryProject28102019
                     }
                     if (player1score < player2score)
                     {
-
                         MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
                     }
                     //ni.Save2PGame(player1score, player2score);
@@ -295,6 +301,7 @@ namespace MemoryProject28102019
             CurrentPlayer = true;
             tpg.WriteTurnDisplay(CurrentPlayer);
         }
+
 
 
     }

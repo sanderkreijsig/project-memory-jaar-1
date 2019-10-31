@@ -23,7 +23,8 @@ namespace MemoryProject28102019
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         string PlayerInput;
-        
+        string PlayerInputGetrimt;
+        bool OnePlayerGameBool;
         MemoryGrid grid;
         //TwoPlayerGame tpg;
         Highscore hs;
@@ -32,11 +33,11 @@ namespace MemoryProject28102019
         //MainWindow main;
         public OnePlayerGame(string PlayerInput)
         {
-
-            this.PlayerInput = PlayerInput;
+            PlayerInputGetrimt = PlayerInput.Replace(" ", string.Empty);
+            this.PlayerInput = PlayerInputGetrimt;
 
             InitializeComponent();
-            hs = new Highscore(highscoretb, currentscoretb, PlayerInput);
+            hs = new Highscore(highscoretb, currentscoretb, PlayerInputGetrimt);
             //main = new MainWindow();
             //ni = new NameInput(UName1Label);
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, ni, true);
