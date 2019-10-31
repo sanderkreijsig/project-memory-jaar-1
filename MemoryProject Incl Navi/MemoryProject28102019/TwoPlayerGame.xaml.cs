@@ -23,17 +23,18 @@ namespace MemoryProject28102019
     {
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
-        bool OnePlayerGameBool;
+        //bool OnePlayerGameBool;
         MemoryGrid grid;
 
         Highscore hs;
         NameInput ni;
         string PlayerOneInput;
         string PlayerTwoInput;
+        
 
         public TwoPlayerGame()
         {
-
+            
         }
         public TwoPlayerGame(string PlayerOneInput, string PlayerTwoInput)
         {
@@ -42,9 +43,9 @@ namespace MemoryProject28102019
             InitializeComponent();
             hs = new Highscore(/*highscoretb, currentscoretb, */player1score, player2score);
             ni = new NameInput( );
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, ni, false);
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, ni, false, this);
             WriteNames();
-
+            
         }
 
 
@@ -87,6 +88,20 @@ namespace MemoryProject28102019
 
             grid.Restart();
 
+        }
+        
+        public void WriteTurnDisplay(bool CurrentPlayer)
+        {
+            
+
+            if (CurrentPlayer == true)
+            {
+                TurnDisplayLabel.Content = PlayerOneInput;
+            }
+            if (CurrentPlayer == false)
+            {
+                TurnDisplayLabel.Content = PlayerTwoInput;
+            }
         }
 
         //private void NameInput_Click(Object sender, RoutedEventArgs e)

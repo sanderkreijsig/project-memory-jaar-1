@@ -27,6 +27,7 @@ namespace MemoryProject28102019
         {
             InitializeComponent();
 
+
         }
 
         private void StartOnePlayerBTN_Click(object sender, RoutedEventArgs e)

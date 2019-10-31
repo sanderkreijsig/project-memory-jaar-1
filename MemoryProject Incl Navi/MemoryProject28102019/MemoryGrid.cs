@@ -22,13 +22,23 @@ namespace MemoryProject28102019
         bool CurrentPlayer = true;
         int player1score;
         int player2score;
-        string username1;
-        string username2;
+        //string username1;
+        //string username2;
         private bool OnePlayerGameBool;
         TwoPlayerGame tpg;
 
+        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool, TwoPlayerGame tpg)
+        {
+            this.tpg = tpg;
+            this.initClass(grid, cols,rows,hs,ni,OnePlayerGameBool);
+        }
+
         public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool)
         {
+            this.initClass(grid, cols, rows, hs, ni, OnePlayerGameBool);
+        }
+
+        public void initClass(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool) { 
             //constructor
             this.hs = hs;
             this.grid = grid;
@@ -38,13 +48,15 @@ namespace MemoryProject28102019
             //this.tpc = tpc;
             initializeGameGrid(cols, rows);
             AddImages();
+            tpg.WriteTurnDisplay(CurrentPlayer);
             hs.ReadHighscore();
+            
             this.OnePlayerGameBool = OnePlayerGameBool;
 
 
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
-            tpg = new TwoPlayerGame();
+            
         }
 
 
@@ -52,7 +64,7 @@ namespace MemoryProject28102019
         ///ForLoop om het speelveld aan te maken 
         /// </summary>
         /// <param name="cols"> Aantal kolommen voor het speelveld</param>
-        /// <param name="rows">Aantal kolommen voor het speelveld</param>
+        /// <param name="rows">Aantal rijen voor het speelveld</param>
         private void initializeGameGrid(int cols, int rows)
         {
 
@@ -138,7 +150,7 @@ namespace MemoryProject28102019
 
 
 
-
+        
         //Kijkt of de kaarten gelijk zijn, houd bij waar de punten heen geen, of dit speler 1 of speler 2 is. update de punten.
         private void checkPair()
         {
@@ -173,20 +185,26 @@ namespace MemoryProject28102019
                 {
                     if (CurrentPlayer == true)
                     {
-                        CurrentPlayer = false;
-                        MessageBox.Show("Speler 2 is nu aan de beurt");
+                        //tpg.WriteTurnDisplay(CurrentPlayer);
+                        CurrentPlayer = false;                       
                         player1score -= 100;
+                         //MessageBox.Show("Speler 2 is nu aan de beurt");
                     }
                     else
                     {
+
+                        //tpg.WriteTurnDisplay(CurrentPlayer);
                         CurrentPlayer = true;
-                        MessageBox.Show("Speler 1 is nu aan de beurt");
+                        
+                        //MessageBox.Show("Speler 1 is nu aan de beurt");
                         player2score -= 100;
+                        
                     }
                 }
 
 
             }
+            tpg.WriteTurnDisplay(CurrentPlayer);
             hs.WriteCurrentscore(score);
             hs.WriteHighscore(score);
             hs.ReadHighscore();
@@ -226,19 +244,19 @@ namespace MemoryProject28102019
 
             }
         }
-        private bool hasDelay;
+        
         // als kaarten niet gelijk zijn, draait hij terug naar achtergrond met een delay.
         private async void resetCards(Image card1, Image card2)
         {
             this.Image1 = card1;
             this.Image2 = card2;
 
-            hasDelay = true;
+            
             await Task.Delay(1000);
 
             card1.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
             card2.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
-            hasDelay = false;
+            
         }
 
         //plaatjes aan lijst toevoegen
@@ -274,6 +292,8 @@ namespace MemoryProject28102019
             player2score = 0;
             hs.WriteMultiscore(player1score, player2score);
             hs.WriteCurrentscore(score);
+            CurrentPlayer = true;
+            tpg.WriteTurnDisplay(CurrentPlayer);
         }
 
 

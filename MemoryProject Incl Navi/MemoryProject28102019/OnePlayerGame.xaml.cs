@@ -23,9 +23,9 @@ namespace MemoryProject28102019
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         string PlayerInput;
-        bool OnePlayerGameBool;
+        
         MemoryGrid grid;
-
+        //TwoPlayerGame tpg;
         Highscore hs;
         NameInput ni;
         OnePlayerClass OPC;
