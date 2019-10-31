@@ -30,11 +30,11 @@ namespace MemoryProject28102019
         NameInput ni;
         string PlayerOneInput;
         string PlayerTwoInput;
-        
+
 
         public TwoPlayerGame()
         {
-            
+            InitializeComponent();
         }
         public TwoPlayerGame(string PlayerOneInput, string PlayerTwoInput)
         {

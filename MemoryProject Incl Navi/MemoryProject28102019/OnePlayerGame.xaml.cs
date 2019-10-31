@@ -30,12 +30,14 @@ namespace MemoryProject28102019
         Highscore hs;
         NameInput ni;
         OnePlayerClass OPC;
+        TwoPlayerGame tpg;
+        
         //MainWindow main;
         public OnePlayerGame(string PlayerInput)
         {
             PlayerInputGetrimt = PlayerInput.Replace(" ", string.Empty);
             this.PlayerInput = PlayerInputGetrimt;
-
+            
             InitializeComponent();
             hs = new Highscore(highscoretb, currentscoretb, PlayerInputGetrimt);
             //main = new MainWindow();
@@ -43,6 +45,8 @@ namespace MemoryProject28102019
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, ni, true);
             //OnePlayerGameBool = main.OnePlayerGameBool;
             OPC = new OnePlayerClass();
+            
+            
             PlayerNameInput();
         }
 

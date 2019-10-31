@@ -49,12 +49,15 @@ namespace MemoryProject28102019
             //this.tpc = tpc;
             initializeGameGrid(cols, rows);
             AddImages();
-            tpg.WriteTurnDisplay(CurrentPlayer);
+            
             hs.ReadHighscore();
             
             this.OnePlayerGameBool = OnePlayerGameBool;
-
-
+            if (OnePlayerGameBool == false)
+            {
+                tpg.WriteTurnDisplay(CurrentPlayer);
+            }
+            
             Image image = new Image();
             image.MouseDown += new MouseButtonEventHandler(CardClick);
             
@@ -151,6 +154,7 @@ namespace MemoryProject28102019
                
                 Image1 = null;
                 Image2 = null;
+                
             }
         }
 
@@ -211,7 +215,11 @@ namespace MemoryProject28102019
 
 
             }
-            tpg.WriteTurnDisplay(CurrentPlayer);
+            if (OnePlayerGameBool == false)
+            {
+                tpg.WriteTurnDisplay(CurrentPlayer);
+            }
+            //tpg.WriteTurnDisplay(CurrentPlayer);
             hs.WriteCurrentscore(score);
             hs.WriteHighscore(score);
             hs.ReadHighscore();
@@ -262,7 +270,8 @@ namespace MemoryProject28102019
 
             card1.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
             card2.Source = new BitmapImage(new Uri("Icons/Plaatje0.png", UriKind.Relative));
-            
+            numberOfClicks = 0;
+
         }
 
         //plaatjes aan lijst toevoegen
@@ -299,7 +308,10 @@ namespace MemoryProject28102019
             hs.WriteMultiscore(player1score, player2score);
             hs.WriteCurrentscore(score);
             CurrentPlayer = true;
+            if (OnePlayerGameBool == false)
+            { 
             tpg.WriteTurnDisplay(CurrentPlayer);
+            }
         }
 
 
