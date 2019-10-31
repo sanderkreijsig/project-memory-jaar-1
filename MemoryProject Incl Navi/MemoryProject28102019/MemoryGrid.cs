@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-
+using System.IO;
 
 namespace MemoryProject28102019
 {
@@ -49,7 +49,9 @@ namespace MemoryProject28102019
             //this.tpc = tpc;
             initializeGameGrid(cols, rows);
             AddImages();
-            
+            SaveGame();
+
+
             hs.ReadHighscore();
             
             this.OnePlayerGameBool = OnePlayerGameBool;
@@ -82,7 +84,18 @@ namespace MemoryProject28102019
                 grid.ColumnDefinitions.Add(new ColumnDefinition());
             }
         }
+        private void SaveGame()
+        {
+            List<ImageSource> imagesPlace = GetImageList();
+            TextWriter tw = new StreamWriter("locatieplaatjes.txt");
+            for (int i = 0; i < imagesPlace.Count; i++)
+            {
+                tw.WriteLine(imagesPlace[i]);
 
+            }
+            tw.WriteLine();
+            tw.Close();
+        }
         //Lijstmaken van de achterkant van de kaarten. 
         //CardClick event aangemaakt. 
         private void AddImages()
@@ -301,6 +314,7 @@ namespace MemoryProject28102019
         {
             grid.Children.Clear();
             AddImages();
+            SaveGame();
             finishCounter = 0;
             score = 0;
             player1score = 0;
