@@ -231,6 +231,7 @@ namespace MemoryProject28102019
             if (OnePlayerGameBool == false)
             {
                 tpg.WriteTurnDisplay(CurrentPlayer);
+                tpg.Visualscoredisplay(player1score, player2score);
             }
             //tpg.WriteTurnDisplay(CurrentPlayer);
             hs.WriteCurrentscore(score);

@@ -104,6 +104,14 @@ namespace MemoryProject28102019
             }
         }
 
+        public void Visualscoredisplay(int player1score, int player2score)
+        {
+            progressp1.Value = player1score;
+            progressp2.Value = player2score;
+        }
+
+
+
         //private void NameInput_Click(Object sender, RoutedEventArgs e)
         //{
         //    ni.WriteNameInput();
