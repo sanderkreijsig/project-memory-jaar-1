@@ -210,19 +210,26 @@ namespace MemoryProject28102019
                     if (CurrentPlayer == true)
                     {
                         //tpg.WriteTurnDisplay(CurrentPlayer);
-                        CurrentPlayer = false;                       
-                        player1score -= 100;
-                         //MessageBox.Show("Speler 2 is nu aan de beurt");
+                        CurrentPlayer = false;     
+                        
+                        if (player1score >= 100)
+                        {
+                            player1score -= 100;
+                        }
+                            
+                            //MessageBox.Show("Speler 2 is nu aan de beurt");
                     }
                     else
                     {
 
                         //tpg.WriteTurnDisplay(CurrentPlayer);
                         CurrentPlayer = true;
-                        
-                        //MessageBox.Show("Speler 1 is nu aan de beurt");
-                        player2score -= 100;
-                        
+
+                        if (player2score >= 100)
+                        {
+                            //MessageBox.Show("Speler 1 is nu aan de beurt");
+                            player2score -= 100;
+                        }
                     }
                 }
 

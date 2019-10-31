@@ -104,6 +104,11 @@ namespace MemoryProject28102019
             }
         }
 
+        /// <summary>
+        /// stelt de progressbar gelijk aan de score
+        /// </summary>
+        /// <param name="player1score">Dit is de score van player 1 en dit wordt gegenereerd in de memory grid</param>
+        /// <param name="player2score">Dit is de score van player 2 en dit wordt gegenereerd in de memory grid</param>
         public void Visualscoredisplay(int player1score, int player2score)
         {
             progressp1.Value = player1score;
