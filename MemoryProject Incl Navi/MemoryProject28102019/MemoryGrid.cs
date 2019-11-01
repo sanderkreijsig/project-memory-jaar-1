@@ -342,6 +342,7 @@ namespace MemoryProject28102019
             grid.Children.Clear();
             AddImages();
             SaveGame();
+            //hs.ReadHighscore();
             finishCounter = 0;
             score = 0;
             player1score = 0;

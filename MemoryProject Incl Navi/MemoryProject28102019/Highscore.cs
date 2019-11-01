@@ -84,12 +84,9 @@ namespace MemoryProject28102019
 
         public void WriteHighscore(int score)
         {
-            if (score >= Convert.ToInt32(HighscoreTextBox.Text))
-            {
                 TextWriter tw = new StreamWriter("highscores.txt", true);
                 tw.WriteLine(PlayerInputGetrimt + " " + score);
                 tw.Close();
-            }
         }
     }
 }
