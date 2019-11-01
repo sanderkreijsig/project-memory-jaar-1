@@ -9,6 +9,9 @@
       Title="OnePlayerInput">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="BackGround.png" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Frame x:Name="OnePlayerInputFrame"/>
         <StackPanel  Orientation="Vertical" Margin="0,0,0,35" VerticalAlignment="Center">
             <TextBlock TextAlignment="Center" FontSize="25" Height="50" Width="150" Margin="0,0,0,0" HorizontalAlignment="Center">Naam:</TextBlock>

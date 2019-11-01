@@ -9,6 +9,9 @@
       Title="HighscorePage">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="BackGround.png" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />

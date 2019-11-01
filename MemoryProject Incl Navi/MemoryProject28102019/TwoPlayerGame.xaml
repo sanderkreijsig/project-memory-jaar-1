@@ -9,6 +9,9 @@
       Title="TwoPlayerGame">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="BackGround.png" Stretch="UniformToFill"/>
+        </Grid.Background>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>

@@ -181,7 +181,11 @@ namespace MemoryProject28102019
             string plaatjedir2 = Convert.ToString(Image2.Tag);
             if (plaatjedir == plaatjedir2)
             {
-                score += 500;
+                if (OnePlayerGameBool == true)
+                {
+                    score += 500;
+                }
+                
                 finishCounter++;
                 Image1.IsEnabled = false;
                 Image2.IsEnabled = false;

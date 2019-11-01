@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="BackGround.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        
+        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">Welkom bij Retro Memory!<LineBreak/>Voor elke goede match krijgt u 500 punten<LineBreak/>Voor elke foute match verliest u 100 punten<LineBreak/>De score kan niet lager worden dan 0<LineBreak/>Veel plezier!</TextBlock>
         <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center">
             <Button FontSize="15" Content="1 Speler" Margin="0,5,10,0" Click="Button_Click" Height="30" Width="100"/>
