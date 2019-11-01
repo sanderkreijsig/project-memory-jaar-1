@@ -31,16 +31,17 @@ namespace MemoryProject28102019
 
         private void SortHigscoreList()
         {
-            //if (!File.Exists("highscores.txt"))
-            //{
-            //    TextWriter tw = new StreamWriter("highscores.txt");
-            //    tw.WriteLine("AAA 000");
-            //    tw.WriteLine("AAA 000");
-            //    tw.WriteLine("AAA 000");
-            //    tw.WriteLine("AAA 000");
-            //    tw.WriteLine("AAA 000");
-            //    tw.Close();
-            //}
+            if (!File.Exists("highscores.txt"))
+            {
+                TextWriter tw = new StreamWriter("highscores.txt");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
+                tw.Close();
+
+            }
 
             TextReader tr = new StreamReader("highscores.txt");
             List<string> lines = File.ReadLines("highscores.txt").ToList();
