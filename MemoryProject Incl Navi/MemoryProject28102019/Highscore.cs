@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Controls;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace MemoryProject28102019
 {
@@ -62,8 +63,18 @@ namespace MemoryProject28102019
             }
 
             TextReader tr = new StreamReader("highscores.txt");
+            List<string> lines = File.ReadLines("highscores.txt").ToList();
+            var parsedPersons = from s in lines
+                                select new
+                                {
+                                    Score = int.Parse(s.Split(' ')[1]),
+                                    Name = s.Split(' ')[0]
+                                };
+            var sortedPersons = parsedPersons.OrderByDescending(o => o.Score).ThenBy(i => i.Name);
+            var result = (from s in sortedPersons
+                          select s.Name + " " + s.Score).ToArray();
 
-            string output = tr.ReadLine();
+            string output = result[0];
             string outputScore = output.Substring(output.IndexOf(' ') + 1);
             HighscoreTextBox.Text = outputScore;
             tr.Close();
