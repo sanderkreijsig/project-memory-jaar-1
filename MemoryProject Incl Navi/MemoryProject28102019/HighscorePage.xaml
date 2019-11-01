@@ -13,19 +13,26 @@
             <ImageBrush ImageSource="BackGround.png" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
             <RowDefinition Height="8*" />
         </Grid.RowDefinitions>
-        
-        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="40" HorizontalAlignment="Center">Highscore:</Label>
-        
-        <TextBlock x:Name="HighscoreScore" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Text="9999" HorizontalAlignment="Center" MinWidth="200" TextAlignment="Center"></TextBlock>
+
+        <Label Grid.Row="0" Grid.Column="1" FontSize="40" HorizontalAlignment="Center">Highscore:</Label>
+
+        <TextBlock x:Name="HighscoreScore0" FontSize="35" Grid.Column="1" Grid.Row="1" Text="9999" HorizontalAlignment="Center" MinWidth="400" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="HighscoreScore1" FontSize="35" Grid.Column="1" Grid.Row="2" Text="9999" HorizontalAlignment="Center" MinWidth="400" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="HighscoreScore2" FontSize="35" Grid.Column="1" Grid.Row="3" Text="9999" HorizontalAlignment="Center" MinWidth="400" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="HighscoreScore3" FontSize="35" Grid.Column="1" Grid.Row="4" Text="9999" HorizontalAlignment="Center" MinWidth="400" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="HighscoreScore4" FontSize="35" Grid.Column="1" Grid.Row="5" Text="9999" HorizontalAlignment="Center" MinWidth="400" TextAlignment="Center"></TextBlock>
     </Grid>
 </Page>
