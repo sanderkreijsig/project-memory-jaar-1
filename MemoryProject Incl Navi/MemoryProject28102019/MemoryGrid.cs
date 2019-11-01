@@ -247,12 +247,17 @@ namespace MemoryProject28102019
             {
                 tpg.WriteTurnDisplay(CurrentPlayer);
                 tpg.Visualscoredisplay(player1score, player2score);
+                hs.WriteMultiscore(player1score, player2score);
             }
+            else
+            {
             //tpg.WriteTurnDisplay(CurrentPlayer);
             hs.WriteCurrentscore(score);
-            hs.WriteHighscore(score);
+            //hs.WriteHighscore(score);
             hs.ReadHighscore();
-            hs.WriteMultiscore(player1score, player2score);
+            }
+            
+            
         }
 
         // als finishcounter 8 is is het spel klaar.
@@ -261,9 +266,11 @@ namespace MemoryProject28102019
 
             if (finishCounter == 8)
             {
-
+                if (OnePlayerGameBool == true)
+                {
                 hs.WriteHighscore(score);
                 hs.ReadHighscore();
+                }
                 if (OnePlayerGameBool == false)
                 {
                     //if (player1score > player2score)

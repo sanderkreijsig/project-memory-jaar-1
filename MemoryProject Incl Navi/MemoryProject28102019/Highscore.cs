@@ -53,7 +53,11 @@ namespace MemoryProject28102019
             if (!File.Exists("highscores.txt"))
             {
                 TextWriter tw = new StreamWriter("highscores.txt");
-                tw.Write("0");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
+                tw.WriteLine("AAA 000");
                 tw.Close();
             }
 
@@ -71,7 +75,7 @@ namespace MemoryProject28102019
         {
             if (score >= Convert.ToInt32(HighscoreTextBox.Text))
             {
-                TextWriter tw = new StreamWriter("highscores.txt");
+                TextWriter tw = new StreamWriter("highscores.txt", true);
                 tw.WriteLine(PlayerInputGetrimt + " " + score);
                 tw.Close();
             }
