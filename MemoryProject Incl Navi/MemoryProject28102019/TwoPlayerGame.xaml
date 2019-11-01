@@ -34,7 +34,7 @@
             <TextBlock Grid.Row="0"  x:Name="highscoretb" Text="0" Margin="66,5,0,5"/>
             <Label Grid.Row="1" Grid.Column="1"  Content="Score: "  Grid.RowSpan="2"/>
             <TextBlock Grid.Row="1"  x:Name="currentscoretb" Text="0" Margin="45,5,0,10" RenderTransformOrigin="0.527,0.219"  />-->
-            <ProgressBar Value="0" Minimum="0" Maximum="4000" x:Name="progressp1" Grid.Row="4" Grid.ColumnSpan="1" Margin="0,0,0,22" HorizontalAlignment="Right" Width="114" Height="34" VerticalAlignment="Bottom">
+            <ProgressBar Value="0" Minimum="0" Maximum="4000" x:Name="progressp1" Grid.Row="7" Grid.Column="0"   HorizontalAlignment="Center" Width="161" Height="34" VerticalAlignment="Top" Margin="41,0,-88,0">
                 <ProgressBar.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -49,11 +49,11 @@
             <TextBlock Grid.Row="0"  x:Name="highscoretb" Text="0" Margin="66,5,0,5"/>
             <Label Grid.Row="1" Grid.Column="1"  Content="Score: "  Grid.RowSpan="2"/>
             <TextBlock Grid.Row="1"  x:Name="currentscoretb" Text="0" Margin="45,5,0,10" RenderTransformOrigin="0.527,0.219"  />-->
-            <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="UName1Label" Content="Player 1:  "  Grid.Row="1"/>
-            <TextBlock TextAlignment="Center" FontSize="18" x:Name="player1score" Text="0"  Grid.Row="2" />
-            <Label Grid.Column="0" Grid.Row="4" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Content="De beurt is aan:"/>
-            <Label FontSize="20" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" x:Name="TurnDisplayLabel" Content="test"/>
-
+            <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="UName1Label" Content="Player 1:  "  Grid.Row="2"/>
+            <TextBlock TextAlignment="Center" FontSize="18" x:Name="player1score" Text="0"  Grid.Row="3" />
+            <Label Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Content="De beurt is aan:"/>
+            <Label FontSize="20" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="TurnDisplayLabel" Content="PlaceHolder" Margin="0,35,0,0" Grid.RowSpan="2"/>
+            <Separator Grid.Row="1" VerticalAlignment="Bottom"></Separator>
 
             <Button Click="Restart_Click" Content="Herstart spel" Margin="10,10,10,10" Grid.Row="7"/>
         </Grid>
@@ -77,9 +77,9 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Grid.Column="2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="UName2Label" Content="Player 2:" Grid.Row="1"/>
-            <TextBlock Grid.Column="2" FontSize="18"  x:Name="player2score" Text="0" Grid.Row="2" TextAlignment="Center"></TextBlock>
-            <ProgressBar Value="0" Minimum="0" Maximum="4000" x:Name="progressp2" Grid.Row="4" Height="34"  Width="114" Margin="81,0,-81,20" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Label Grid.Column="2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="UName2Label" Content="Player 2:" Grid.Row="2"/>
+            <TextBlock Grid.Column="2" FontSize="18"  x:Name="player2score" Text="0" Grid.Row="3" TextAlignment="Center"></TextBlock>
+            <ProgressBar Value="0" Minimum="0" Maximum="4000" x:Name="progressp2" Grid.Row="7" Height="34"  Width="160"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="42,0,-87,0">
                 <ProgressBar.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

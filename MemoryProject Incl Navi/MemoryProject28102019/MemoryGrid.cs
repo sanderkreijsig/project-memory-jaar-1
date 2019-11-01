@@ -204,7 +204,11 @@ namespace MemoryProject28102019
             else
             {
                 resetCards(Image1, Image2);
+                if (score >= 100)
+                {
                 score -= 100;
+                }
+                
                 if (OnePlayerGameBool == false)
                 {
                     if (CurrentPlayer == true)
@@ -258,22 +262,26 @@ namespace MemoryProject28102019
                 hs.ReadHighscore();
                 if (OnePlayerGameBool == false)
                 {
-                    if (player1score > player2score)
-                    {
+                    //if (player1score > player2score)
+                    //{
 
-                        MessageBox.Show("Speler 1 heeft gewonnen, gay!!");
-                    }
-                    if (player1score == player2score)
-                    {
+                    //    MessageBox.Show("Speler 1 heeft gewonnen!");
+                    //}
+                    //if (player1score == player2score)
+                    //{
 
-                        MessageBox.Show("No Winner, Noobs");
-                    }
-                    if (player1score < player2score)
-                    {
-                        MessageBox.Show("Speler 2 heeft gewonnen, yeah!!");
-                    }
+                    //    MessageBox.Show("No Winner, Noobs");
+                    //}
+                    //if (player1score < player2score)
+                    //{
+                    //    MessageBox.Show("Speler 2 heeft gewonnen!");
+                    //}
                     //ni.Save2PGame(player1score, player2score);
                     tpg.Save2PGame(player1score, player2score);
+                }
+                else
+                {
+                    MessageBox.Show("Gewonnen, gefeliciteerd!");
                 }
 
 
@@ -332,7 +340,8 @@ namespace MemoryProject28102019
             CurrentPlayer = true;
             if (OnePlayerGameBool == false)
             { 
-            tpg.WriteTurnDisplay(CurrentPlayer);
+                tpg.WriteTurnDisplay(CurrentPlayer);
+                tpg.Visualscoredisplay(player1score, player2score);
             }
         }
 

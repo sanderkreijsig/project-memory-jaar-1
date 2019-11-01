@@ -28,9 +28,15 @@ namespace MemoryProject28102019
 
         private void StartOnePlayerBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+            if ((string.IsNullOrEmpty(PlayerInput.Text)))
+            {
+                MessageBox.Show("U bent vergeten een naam in te vullen!");
+            }
+            else
+            {
             OnePlayerGame onePlayerGame = new OnePlayerGame(PlayerInput.Text);
             this.NavigationService.Navigate(onePlayerGame);
+            }
             
         }
 

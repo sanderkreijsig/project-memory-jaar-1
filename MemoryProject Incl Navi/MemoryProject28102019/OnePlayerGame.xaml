@@ -30,13 +30,14 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-
-            <Label Grid.Row="0" Grid.Column="1" Content="Highscore: "/>
-            <TextBlock Grid.Row="0"  x:Name="highscoretb" Text="0" Margin="66,5,0,5"/>
-            <Label Grid.Row="2" Grid.Column="1"  Content="Score: "  Grid.RowSpan="2"/>
-            <TextBlock Grid.Row="2"  x:Name="currentscoretb" Text="0" Margin="45,5,0,10" RenderTransformOrigin="0.527,0.219"  />
-            <Label Grid.Column="1"  x:Name="UName3Label" Content="Player 1:  "  Grid.Row="1"/>
-            <Button Click="Restart_Click" Content="Restart"  Grid.Row="7"/>
+            
+            <Label FontSize="20" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Content="Highscore: "/>
+            <TextBlock FontSize="20" Grid.Row="0" VerticalAlignment="Bottom" x:Name="highscoretb" Text="0" Margin="103,5,0,5"/>
+            <Separator Grid.Row="1"/>
+            <Label FontSize="20" Grid.Row="4" Grid.Column="1"  Content="Score: "  Grid.RowSpan="2"/>
+            <TextBlock FontSize="20" Grid.Row="4"  x:Name="currentscoretb" Text="0" Margin="64,5,0,10" RenderTransformOrigin="0.527,0.219"  />
+            <Label FontSize="20" Grid.Column="1"  x:Name="UName3Label" Content="Player 1:  "  Grid.Row="2"/>
+            <Button Click="Restart_Click" Content="Herstart spel" Margin="25,10,10,10" Grid.Row="7"/>
         </Grid>
     </Grid>
 </Page>

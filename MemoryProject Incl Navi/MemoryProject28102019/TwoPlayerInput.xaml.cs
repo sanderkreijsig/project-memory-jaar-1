@@ -30,10 +30,19 @@ namespace MemoryProject28102019
 
         }
 
-        private void StartOnePlayerBTN_Click(object sender, RoutedEventArgs e)
+        private void StartTwoPlayerBTN_Click(object sender, RoutedEventArgs e)
         {
-            TwoPlayerGame TwoPlayerGame = new TwoPlayerGame(PlayerOneInput.Text, PlayerTwoInput.Text);
-            this.NavigationService.Navigate(TwoPlayerGame);
+            if ((string.IsNullOrEmpty(PlayerOneInput.Text)) || (string.IsNullOrEmpty(PlayerTwoInput.Text))) 
+            {
+                MessageBox.Show("U bent vergeten alle namen in te vullen!");
+            }
+            else
+            {
+                TwoPlayerGame TwoPlayerGame = new TwoPlayerGame(PlayerOneInput.Text, PlayerTwoInput.Text);
+                this.NavigationService.Navigate(TwoPlayerGame);
+            }
+            
+
         }
     }
 }

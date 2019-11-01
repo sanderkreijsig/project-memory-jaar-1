@@ -78,6 +78,7 @@ namespace MemoryProject28102019
 
             }
 
+            MessageBox.Show(winner + " heeft gewonnen!");
             tw.WriteLine("Spel " + GameCount + ": " + PlayerOneInput + " " + player1score + " " + PlayerTwoInput + " " + player2score + " " + "Winner: " + winner);
             tw.Close();
         }

@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MemoryProject28102019"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Retro Memory" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="BackGround.png" Stretch="UniformToFill"/>
         </Grid.Background>
-
+        
         <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center">
-        <Button Content="1 Speler" Margin="0,5,10,0" Click="Button_Click" Height="30" Width="100"/>
-            <Button Content="2 Spelers" Margin="0,5,10,0" Height="30" Width="100" Click="Button_Click_1"/>
-            <Button Content="Highscores" Margin="0,5,10,0" Width="100" Click="Button_Click_2" Height="30"/>
-            <Button Content="Home" Margin="0,5,0,0" Width="100" Height="30" Click="Button_Click_3"/>
+            <Button FontSize="15" Content="1 Speler" Margin="0,5,10,0" Click="Button_Click" Height="30" Width="100"/>
+            <Button FontSize="15" Content="2 Spelers" Margin="0,5,10,0" Height="30" Width="100" Click="Button_Click_1"/>
+            <Button FontSize="15" Content="Highscores" Margin="0,5,10,0" Width="100" Click="Button_Click_2" Height="30"/>
+            <Button FontSize="15" Content="Home" Margin="0,5,0,0" Width="100" Height="30" Click="Button_Click_3"/>
         </StackPanel>
+        
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
+    
 </Window>
