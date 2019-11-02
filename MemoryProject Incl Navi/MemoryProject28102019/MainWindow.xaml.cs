@@ -20,29 +20,48 @@ namespace MemoryProject28102019
     /// </summary>
     public partial class MainWindow : Window
     {
-        MemoryGrid grid;
+        
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        
+        /// <summary>
+        /// Click event voor het laden van de OnePlayerInput pagina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new OnePlayerInput();
         }
 
+        /// <summary>
+        /// Click event voor het laden van de TwoPlayerInput pagina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Main.Content = new TwoPlayerInput();
-
         }
 
+        /// <summary>
+        /// Click event voor het laden van de Highscore pagina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Main.Content = new HighscorePage();
 
         }
 
+        /// <summary>
+        /// Click event voor het laden van de MainWindow pagina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);

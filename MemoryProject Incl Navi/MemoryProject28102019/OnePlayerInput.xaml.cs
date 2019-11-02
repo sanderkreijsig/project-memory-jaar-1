@@ -26,6 +26,11 @@ namespace MemoryProject28102019
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Click event voor het laden van de OnePlayerGame, maar alleen als het naamveld is ingevuld.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartOnePlayerBTN_Click(object sender, RoutedEventArgs e)
         {
             if ((string.IsNullOrEmpty(PlayerInput.Text)))
@@ -38,13 +43,7 @@ namespace MemoryProject28102019
             this.NavigationService.Navigate(onePlayerGame);
             }
             
-        }
-
-        private void PlayerInput_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
+        }     
 
     }
 }

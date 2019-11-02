@@ -13,45 +13,38 @@ namespace MemoryProject28102019
 {
     public class MemoryGrid
     {
-        //Variabelen waar we mee werken.
+        
         private Grid grid;
         private int cols;
         private int rows;
         private Highscore hs;
-        private NameInput ni;
-        //private TwoPlayerClass tpc;
         bool CurrentPlayer = true;
         int player1score;
         int player2score;
-        //string username1;
-        //string username2;
         private bool OnePlayerGameBool;
         TwoPlayerGame tpg;
 
-        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool, TwoPlayerGame tpg)
+        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, bool OnePlayerGameBool, TwoPlayerGame tpg)
         {
             this.tpg = tpg;
-            this.initClass(grid, cols,rows,hs,ni,OnePlayerGameBool);
+            this.initClass(grid, cols,rows,hs,OnePlayerGameBool);
         }
 
-        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool)
+        public MemoryGrid(Grid grid, int cols, int rows, Highscore hs, bool OnePlayerGameBool)
         {
-            this.initClass(grid, cols, rows, hs, ni, OnePlayerGameBool);
+            this.initClass(grid, cols, rows, hs, OnePlayerGameBool);
         }
 
-        public void initClass(Grid grid, int cols, int rows, Highscore hs, NameInput ni, bool OnePlayerGameBool) { 
-            //constructor
+        public void initClass(Grid grid, int cols, int rows, Highscore hs, bool OnePlayerGameBool)
+        { 
             this.hs = hs;
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
-            this.ni = ni;
-            //this.tpc = tpc;
             initializeGameGrid(cols, rows);
             AddImages();
             SaveGame();
-
-
+            
             hs.ReadHighscore();
             
             this.OnePlayerGameBool = OnePlayerGameBool;
@@ -67,9 +60,9 @@ namespace MemoryProject28102019
 
 
         /// <summary>
-        ///ForLoop om het speelveld aan te maken 
+        ///ForLoop om het speelveld aan te maken. 
         /// </summary>
-        /// <param name="cols"> Aantal kolommen voor het speelveld</param>
+        /// <param name="cols">Aantal kolommen voor het speelveld</param>
         /// <param name="rows">Aantal rijen voor het speelveld</param>
         private void initializeGameGrid(int cols, int rows)
         {
@@ -84,6 +77,10 @@ namespace MemoryProject28102019
                 grid.ColumnDefinitions.Add(new ColumnDefinition());
             }
         }
+
+        /// <summary>
+        /// Slaat de huidige staat van het speelveld op in een textbestand.
+        /// </summary>
         private void SaveGame()
         {
             List<ImageSource> imagesPlace = GetImageList();
@@ -96,8 +93,10 @@ namespace MemoryProject28102019
             tw.WriteLine();
             tw.Close();
         }
-        //Lijstmaken van de achterkant van de kaarten. 
-        //CardClick event aangemaakt. 
+
+        /// <summary>
+        /// Methode voor het inladen van alle plaatjes op de acherkant. Voegt een click functie toe aan deze plaatjes.
+        /// </summary>
         private void AddImages()
         {
             List<ImageSource> images = GetImageList();
@@ -120,12 +119,15 @@ namespace MemoryProject28102019
         static int numberOfClicks = 0;
         private Image card;
         int score;
-
         int finishCounter = 0;
         private Image Image1;
         private Image Image2;
 
-        //Kaarten omdraaien, ++ nummeroffclicks toevoegen
+        /// <summary>
+        /// Click event voor het klikken van de plaatjes/kaartjes. Houdt bij hoe vaak er klikt is, voert de checkCards methode uit, en checkt of het spel is afgelopen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardClick(Object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
@@ -140,7 +142,11 @@ namespace MemoryProject28102019
             }
             
         }
-        //kijken of de kaarten aangeklikt zijn en omdraaien en deze tijdelijk opslaan in variabelen 
+        
+        /// <summary>
+        /// Zorgt dat de plaatjes blijven staan als er nog geen 2 zijn aangeklikt. Als er wel twee zijn aangeklikt wordt de checkpair methode uitgevoerd.
+        /// </summary>
+        /// <param name="card">de geklikte kaart</param>
         private void checkCards(Image card)
         {
 
@@ -174,7 +180,10 @@ namespace MemoryProject28102019
 
 
         
-        //Kijkt of de kaarten gelijk zijn, houd bij waar de punten heen geen, of dit speler 1 of speler 2 is. update de punten.
+        /// <summary>
+        /// Methode die checkt of de plaatjes gelijk zijn, als dit het geval is kijkt hij wie er aan de beurt is, deelt de punten uit aan de juiste speler, houdt bij hoeveel zetten er zijn geweest.
+        /// Als de plaatjes niet gelijk zijn geeft hij strafpunten aan de juiste speler, reset de kaartjes, en verandert de beurt. Updatet de scores.
+        /// </summary>
         private void checkPair()
         {
             string plaatjedir = Convert.ToString(Image1.Tag);
@@ -185,16 +194,8 @@ namespace MemoryProject28102019
                 {
                     score += 500;
                 }
-                
-                finishCounter++;
-                Image1.IsEnabled = false;
-                Image2.IsEnabled = false;
-                numberOfClicks = 0;
-
                 if (OnePlayerGameBool == false)
                 {
-
-
                     if (CurrentPlayer == true)
                     {
                         player1score += 500;
@@ -204,6 +205,12 @@ namespace MemoryProject28102019
                         player2score += 500;
                     }
                 }
+                
+                finishCounter++;
+                Image1.IsEnabled = false;
+                Image2.IsEnabled = false;
+                numberOfClicks = 0;
+
             }
             else
             {
@@ -217,7 +224,7 @@ namespace MemoryProject28102019
                 {
                     if (CurrentPlayer == true)
                     {
-                        //tpg.WriteTurnDisplay(CurrentPlayer);
+                        
                         CurrentPlayer = false;     
                         
                         if (player1score >= 100)
@@ -225,17 +232,15 @@ namespace MemoryProject28102019
                             player1score -= 100;
                         }
                             
-                            //MessageBox.Show("Speler 2 is nu aan de beurt");
+                           
                     }
                     else
                     {
-
-                        //tpg.WriteTurnDisplay(CurrentPlayer);
+                        
                         CurrentPlayer = true;
 
                         if (player2score >= 100)
                         {
-                            //MessageBox.Show("Speler 1 is nu aan de beurt");
                             player2score -= 100;
                         }
                     }
@@ -251,16 +256,16 @@ namespace MemoryProject28102019
             }
             else
             {
-            //tpg.WriteTurnDisplay(CurrentPlayer);
-            hs.WriteCurrentscore(score);
-            //hs.WriteHighscore(score);
-            hs.ReadHighscore();
+                hs.WriteCurrentscore(score);
+                hs.ReadHighscore();
             }
             
             
         }
 
-        // als finishcounter 8 is is het spel klaar.
+        /// <summary>
+        /// Methode die checkt of het spel klaar is, als dit het geval is schrijft hij highscores op bij een 1 player game. Bij een 2 player game worden de scores en winnaar opgeslagen.
+        /// </summary>
         private void GameFinish()
         {
 
@@ -273,33 +278,20 @@ namespace MemoryProject28102019
                 }
                 if (OnePlayerGameBool == false)
                 {
-                    //if (player1score > player2score)
-                    //{
-
-                    //    MessageBox.Show("Speler 1 heeft gewonnen!");
-                    //}
-                    //if (player1score == player2score)
-                    //{
-
-                    //    MessageBox.Show("No Winner, Noobs");
-                    //}
-                    //if (player1score < player2score)
-                    //{
-                    //    MessageBox.Show("Speler 2 heeft gewonnen!");
-                    //}
-                    //ni.Save2PGame(player1score, player2score);
                     tpg.Save2PGame(player1score, player2score);
                 }
                 else
                 {
                     MessageBox.Show("Gewonnen, gefeliciteerd!");
                 }
-
-
             }
         }
         
-        // als kaarten niet gelijk zijn, draait hij terug naar achtergrond met een delay.
+        /// <summary>
+        /// Draait de kaarten terug naar de achtergrond na een delay, als deze niet hetzelfde zijn.
+        /// </summary>
+        /// <param name="card1">De image die eerst geklikt was</param>
+        /// <param name="card2">De image die als tweede geklikt is</param>
         private async void resetCards(Image card1, Image card2)
         {
             this.Image1 = card1;
@@ -314,7 +306,10 @@ namespace MemoryProject28102019
 
         }
 
-        //plaatjes aan lijst toevoegen
+        /// <summary>
+        /// Voegt de plaatjes aan een lijst toe, en zorgt dat dezelfde plaatjes dezelfde naam krijgen. Daarna worden deze geshuffeld.
+        /// </summary>
+        /// <returns>Een geshuffelde lijst met plaatjes</returns>
         private List<ImageSource> GetImageList()
         {
             List<ImageSource> images = new List<ImageSource>();
@@ -324,7 +319,7 @@ namespace MemoryProject28102019
                 ImageSource source = new BitmapImage(new Uri("Icons/" + imageNr + ".png", UriKind.Relative));
                 images.Add(source);
             }
-            //plaatjes op random rijen en kolommen zetten.
+            
             Random random = new Random();
             for (int i = 0; i < (rows * cols); i++)
             {
@@ -336,13 +331,15 @@ namespace MemoryProject28102019
 
             return images;
         }
-        //restartknop zodat alles weer naar het begin wordt gezet.
+        
+        /// <summary>
+        /// Methode voor het resetten van het speelveld en alle relevante variabelen.
+        /// </summary>
         public void Restart()
         {
             grid.Children.Clear();
             AddImages();
             SaveGame();
-            //hs.ReadHighscore();
             finishCounter = 0;
             score = 0;
             player1score = 0;

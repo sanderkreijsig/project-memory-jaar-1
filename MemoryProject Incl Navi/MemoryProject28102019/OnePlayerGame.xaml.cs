@@ -24,50 +24,45 @@ namespace MemoryProject28102019
         private const int NR_OF_ROWS = 4;
         string PlayerInput;
         string PlayerInputGetrimt;
-        bool OnePlayerGameBool;
+
         MemoryGrid grid;
-        //TwoPlayerGame tpg;
         Highscore hs;
-        NameInput ni;
-        OnePlayerClass OPC;
-        TwoPlayerGame tpg;
+                
         
-        //MainWindow main;
         public OnePlayerGame(string PlayerInput)
         {
             PlayerInputGetrimt = PlayerInput.Replace(" ", string.Empty);
             this.PlayerInput = PlayerInputGetrimt;
             
             InitializeComponent();
+
             hs = new Highscore(highscoretb, currentscoretb, PlayerInputGetrimt);
-            //main = new MainWindow();
-            //ni = new NameInput(UName1Label);
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, ni, true);
-            //OnePlayerGameBool = main.OnePlayerGameBool;
-            OPC = new OnePlayerClass();
-            
-            
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, /*ni, */true);
+                                    
             PlayerNameInput();
         }
 
+        /// <summary>
+        /// Methode die de ingevoerde naam laat zien tijdens het spel.
+        /// </summary>
         private void PlayerNameInput()
         {
             UName3Label.Content = PlayerInput;
         }
 
 
+        /// <summary>
+        /// Click event die de restartmethode oproept.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Restart_Click(Object sender, RoutedEventArgs e)
         {
 
             grid.Restart();
 
         }
-
-        private void NameInput_Click(Object sender, RoutedEventArgs e)
-        {
-            ni.WriteNameInput();
-
-        }
+        
     }
 }
 

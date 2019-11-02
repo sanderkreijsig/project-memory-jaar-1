@@ -23,40 +23,42 @@ namespace MemoryProject28102019
     {
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
-        //bool OnePlayerGameBool;
         MemoryGrid grid;
-
         Highscore hs;
         NameInput ni;
         string PlayerOneInput;
         string PlayerTwoInput;
+        string winner;
+        int GameCount = 0;
 
-
-        public TwoPlayerGame()
-        {
-            InitializeComponent();
-        }
         public TwoPlayerGame(string PlayerOneInput, string PlayerTwoInput)
         {
             this.PlayerOneInput = PlayerOneInput;
             this.PlayerTwoInput = PlayerTwoInput;
             InitializeComponent();
-            hs = new Highscore(/*highscoretb, currentscoretb, */player1score, player2score);
+            hs = new Highscore(player1score, player2score);
             ni = new NameInput( );
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, ni, false, this);
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, /*ni, */false, this);
             WriteNames();
             
         }
 
-
+        /// <summary>
+        /// Methode die de ingevoerde namen laat zien tijdens het spel.
+        /// </summary>
         public void WriteNames()
         {
             UName1Label.Content = PlayerOneInput;
             UName2Label.Content = PlayerTwoInput;
         }
 
-        string winner;
-        int GameCount = 0;
+        
+
+        /// <summary>
+        /// Methode die relevante gegevens(Gamecount, namen, scores, en winnaar) van een 2 speler spel opslaat in een tekstbestand nadat het spel is afgelopen.
+        /// </summary>
+        /// <param name="player1score"></param>
+        /// <param name="player2score"></param>
         public void Save2PGame(int player1score, int player2score)
         {
             GameCount++;
@@ -79,11 +81,15 @@ namespace MemoryProject28102019
             }
 
             MessageBox.Show(winner + " heeft gewonnen!");
-            tw.WriteLine("Spel " + GameCount + ": " + PlayerOneInput + " " + player1score + " " + PlayerTwoInput + " " + player2score + " " + "Winner: " + winner);
+            tw.WriteLine("Spel " + GameCount + ": " + PlayerOneInput + " " + player1score + " " + PlayerTwoInput + " " + player2score + " " + "Winnaar: " + winner);
             tw.Close();
         }
 
-
+        /// <summary>
+        /// Click event die de restartmethode oproept.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Restart_Click(Object sender, RoutedEventArgs e)
         {
 
@@ -91,6 +97,10 @@ namespace MemoryProject28102019
 
         }
         
+        /// <summary>
+        /// Methode voor het laten zien wie er aan de beurt is.
+        /// </summary>
+        /// <param name="CurrentPlayer">Bool die bepaalt/bijhoudt wie er aan de beurt is</param>
         public void WriteTurnDisplay(bool CurrentPlayer)
         {
             
@@ -115,13 +125,6 @@ namespace MemoryProject28102019
             progressp1.Value = player1score;
             progressp2.Value = player2score;
         }
-
-
-
-        //private void NameInput_Click(Object sender, RoutedEventArgs e)
-        //{
-        //    ni.WriteNameInput();
-
-        //}
+                
     }
 }
