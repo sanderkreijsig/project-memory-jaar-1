@@ -37,7 +37,7 @@ namespace MemoryProject28102019
             InitializeComponent();
 
             hs = new Highscore(highscoretb, currentscoretb, PlayerInputGetrimt);
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, /*ni, */true);
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, true);
                                     
             PlayerNameInput();
         }

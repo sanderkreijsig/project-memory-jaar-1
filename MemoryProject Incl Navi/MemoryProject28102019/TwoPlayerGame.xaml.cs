@@ -25,7 +25,7 @@ namespace MemoryProject28102019
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
         Highscore hs;
-        NameInput ni;
+        
         string PlayerOneInput;
         string PlayerTwoInput;
         string winner;
@@ -37,7 +37,7 @@ namespace MemoryProject28102019
             this.PlayerTwoInput = PlayerTwoInput;
             InitializeComponent();
             hs = new Highscore(player1score, player2score);
-            ni = new NameInput( );
+            
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, hs, /*ni, */false, this);
             WriteNames();
             
