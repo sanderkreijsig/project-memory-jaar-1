@@ -60,12 +60,9 @@
       <DependentUpon>HighscorePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MemoryGrid.cs" />
-    <Compile Include="NameInput.cs" />
-    <Compile Include="OnePlayerClass.cs" />
     <Compile Include="OnePlayerGame.xaml.cs">
       <DependentUpon>OnePlayerGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TwoPlayerClass.cs" />
     <Compile Include="TwoPlayerGame.xaml.cs">
       <DependentUpon>TwoPlayerGame.xaml</DependentUpon>
     </Compile>
