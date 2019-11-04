@@ -1,0 +1,122 @@
+\hypertarget{class_memory_project28102019_1_1_highscore}{}\doxysection{Memory\+Project28102019.\+Highscore Class Reference}
+\label{class_memory_project28102019_1_1_highscore}\index{MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_memory_project28102019_1_1_highscore_a709d6849439708a76386d1c726d45462}{Highscore}} (Text\+Block tb, Text\+Block tb2, string Player\+Input\+Getrimt)
+\begin{DoxyCompactList}\small\item\em Overload constructor met variabelen voor de \mbox{\hyperlink{class_memory_project28102019_1_1_one_player_game}{One\+Player\+Game}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_memory_project28102019_1_1_highscore_a9e0f4f03e92c2e92bfbc92b1664510b5}{Highscore}} (Text\+Block ps1tb, Text\+Block ps2tb)
+\begin{DoxyCompactList}\small\item\em Overload constructor met variabelen voor de \mbox{\hyperlink{class_memory_project28102019_1_1_two_player_game}{Two\+Player\+Game}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_memory_project28102019_1_1_highscore_a5c2b7b0820c1931b09ac39d8b3ddff4d}{Write\+Currentscore}} (int score)
+\begin{DoxyCompactList}\small\item\em Methode die de huidige score in een Text\+Block schrijft \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_memory_project28102019_1_1_highscore_a5d2fc6a31a3f97abcc3b0f7923a4f8c5}{Write\+Multiscore}} (int player1score, int player2score)
+\begin{DoxyCompactList}\small\item\em Methode die de respectievelijke scores laat zien in een game met 2 spelers \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_memory_project28102019_1_1_highscore_a028e85db03543260d3c75a9d93dfb058}{Read\+Highscore}} ()
+\begin{DoxyCompactList}\small\item\em Methode die een highscore.\+txt aanmaakt als deze nog niet bestaat, de huidige scores in het textbestand in een array zet, de namen van de scores splitst, deze score sorteert, en daarna laat zien in het spel scherm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_memory_project28102019_1_1_highscore_a02cde694f380a5daad9e1a753ef8ec27}{Write\+Highscore}} (int score)
+\begin{DoxyCompactList}\small\item\em Methode die nieuwe scores aan highscores.\+txt toevoegd \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_memory_project28102019_1_1_highscore_a709d6849439708a76386d1c726d45462}\label{class_memory_project28102019_1_1_highscore_a709d6849439708a76386d1c726d45462}} 
+\index{MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}!Highscore@{Highscore}}
+\index{Highscore@{Highscore}!MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}}
+\doxysubsubsection{\texorpdfstring{Highscore()}{Highscore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Memory\+Project28102019.\+Highscore.\+Highscore (\begin{DoxyParamCaption}\item[{Text\+Block}]{tb,  }\item[{Text\+Block}]{tb2,  }\item[{string}]{Player\+Input\+Getrimt }\end{DoxyParamCaption})}
+
+
+
+Overload constructor met variabelen voor de \mbox{\hyperlink{class_memory_project28102019_1_1_one_player_game}{One\+Player\+Game}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tb} & Text\+Block in het spelscherm waar de highscore wordt laten zien\\
+\hline
+{\em tb2} & Text\+Bock in het spelscherm waar de huidige score wordt laten zien\\
+\hline
+{\em Player\+Input\+Getrimt} & De getrimde versie van de naaminvoer van de speler\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_memory_project28102019_1_1_highscore_a9e0f4f03e92c2e92bfbc92b1664510b5}\label{class_memory_project28102019_1_1_highscore_a9e0f4f03e92c2e92bfbc92b1664510b5}} 
+\index{MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}!Highscore@{Highscore}}
+\index{Highscore@{Highscore}!MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}}
+\doxysubsubsection{\texorpdfstring{Highscore()}{Highscore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Memory\+Project28102019.\+Highscore.\+Highscore (\begin{DoxyParamCaption}\item[{Text\+Block}]{ps1tb,  }\item[{Text\+Block}]{ps2tb }\end{DoxyParamCaption})}
+
+
+
+Overload constructor met variabelen voor de \mbox{\hyperlink{class_memory_project28102019_1_1_two_player_game}{Two\+Player\+Game}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ps1tb} & Text\+Block waar de naam van player 1 in staat\\
+\hline
+{\em ps2tb} & Text\+Block waar de naam van player 2 in staat\\
+\hline
+\end{DoxyParams}
+~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_memory_project28102019_1_1_highscore_a028e85db03543260d3c75a9d93dfb058}\label{class_memory_project28102019_1_1_highscore_a028e85db03543260d3c75a9d93dfb058}} 
+\index{MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}!ReadHighscore@{ReadHighscore}}
+\index{ReadHighscore@{ReadHighscore}!MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}}
+\doxysubsubsection{\texorpdfstring{ReadHighscore()}{ReadHighscore()}}
+{\footnotesize\ttfamily void Memory\+Project28102019.\+Highscore.\+Read\+Highscore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Methode die een highscore.\+txt aanmaakt als deze nog niet bestaat, de huidige scores in het textbestand in een array zet, de namen van de scores splitst, deze score sorteert, en daarna laat zien in het spel scherm. 
+
+\mbox{\Hypertarget{class_memory_project28102019_1_1_highscore_a5c2b7b0820c1931b09ac39d8b3ddff4d}\label{class_memory_project28102019_1_1_highscore_a5c2b7b0820c1931b09ac39d8b3ddff4d}} 
+\index{MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}!WriteCurrentscore@{WriteCurrentscore}}
+\index{WriteCurrentscore@{WriteCurrentscore}!MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}}
+\doxysubsubsection{\texorpdfstring{WriteCurrentscore()}{WriteCurrentscore()}}
+{\footnotesize\ttfamily void Memory\+Project28102019.\+Highscore.\+Write\+Currentscore (\begin{DoxyParamCaption}\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+Methode die de huidige score in een Text\+Block schrijft 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & score die wordt gegenereerd in een andere class\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_memory_project28102019_1_1_highscore_a02cde694f380a5daad9e1a753ef8ec27}\label{class_memory_project28102019_1_1_highscore_a02cde694f380a5daad9e1a753ef8ec27}} 
+\index{MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}!WriteHighscore@{WriteHighscore}}
+\index{WriteHighscore@{WriteHighscore}!MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}}
+\doxysubsubsection{\texorpdfstring{WriteHighscore()}{WriteHighscore()}}
+{\footnotesize\ttfamily void Memory\+Project28102019.\+Highscore.\+Write\+Highscore (\begin{DoxyParamCaption}\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+Methode die nieuwe scores aan highscores.\+txt toevoegd 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & de behaalde scores\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_memory_project28102019_1_1_highscore_a5d2fc6a31a3f97abcc3b0f7923a4f8c5}\label{class_memory_project28102019_1_1_highscore_a5d2fc6a31a3f97abcc3b0f7923a4f8c5}} 
+\index{MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}!WriteMultiscore@{WriteMultiscore}}
+\index{WriteMultiscore@{WriteMultiscore}!MemoryProject28102019.Highscore@{MemoryProject28102019.Highscore}}
+\doxysubsubsection{\texorpdfstring{WriteMultiscore()}{WriteMultiscore()}}
+{\footnotesize\ttfamily void Memory\+Project28102019.\+Highscore.\+Write\+Multiscore (\begin{DoxyParamCaption}\item[{int}]{player1score,  }\item[{int}]{player2score }\end{DoxyParamCaption})}
+
+
+
+Methode die de respectievelijke scores laat zien in een game met 2 spelers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1score} & Score van speler 1\\
+\hline
+{\em player2score} & Score van speler 2\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Highscore.\+cs\end{DoxyCompactItemize}

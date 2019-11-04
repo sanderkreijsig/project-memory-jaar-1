@@ -56,6 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Highscore.cs" />
+    <Compile Include="HighscorePage.xaml.cs">
+      <DependentUpon>HighscorePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MemoryGrid.cs" />
     <Compile Include="NameInput.cs" />
     <Compile Include="OnePlayerClass.cs" />
@@ -69,6 +72,10 @@
     <Compile Include="TwoPlayerInput.xaml.cs">
       <DependentUpon>TwoPlayerInput.xaml</DependentUpon>
     </Compile>
+    <Page Include="HighscorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
